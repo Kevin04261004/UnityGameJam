@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7854919021144958391}
   - component: {fileID: 5903758227146504879}
   - component: {fileID: 9196313127008496649}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LampMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 5170465585972224053}
   - component: {fileID: 461503072044266540}
   - component: {fileID: 73424851025957790}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: InteractorDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,6 +235,7 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 8
+  _dontAddWhenOtherColliderIsTrigger: 0
 --- !u!1 &524715037152880910
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,9 +254,9 @@ GameObject:
   - component: {fileID: 3178088413860974874}
   - component: {fileID: 999708779736190310}
   - component: {fileID: 6725898797285262563}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -376,7 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 201
   _wallCheck: {fileID: 4073378732719931356}
   _interactCheck: {fileID: 73424851025957790}
   <_collider>k__BackingField: {fileID: 999708779736190310}
@@ -394,7 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 201
   _wallCheck: {fileID: 8116694927905621869}
   _interactCheck: {fileID: 8341958679189784295}
   <_collider>k__BackingField: {fileID: 6725898797285262563}
@@ -480,7 +481,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 792747755518149204}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlatformDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +516,7 @@ GameObject:
   - component: {fileID: 744966142818509502}
   - component: {fileID: 739852692185697007}
   - component: {fileID: 4073378732719931356}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WallDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +599,8 @@ MonoBehaviour:
   <DetectedColliders>k__BackingField: []
   _layerMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 264
+  _dontAddWhenOtherColliderIsTrigger: 1
 --- !u!1 &4157257254432968937
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,7 +612,7 @@ GameObject:
   - component: {fileID: 7172736584225746871}
   - component: {fileID: 2298678152710562644}
   - component: {fileID: 8003081676936001248}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerFollowCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -717,7 +719,7 @@ GameObject:
   - component: {fileID: 360049955191645339}
   - component: {fileID: 6206515950300844646}
   - component: {fileID: 8341958679189784295}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: InteractorDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,7 +802,8 @@ MonoBehaviour:
   <DetectedColliders>k__BackingField: []
   _layerMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 64
+  _dontAddWhenOtherColliderIsTrigger: 0
 --- !u!1 &6962904878353415150
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +814,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9058702892215331855}
   - component: {fileID: 8731515316818272171}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -897,7 +900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1730529958061275438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LampDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -932,7 +935,7 @@ GameObject:
   - component: {fileID: 3558712884621162760}
   - component: {fileID: 6389897888874011054}
   - component: {fileID: 8116694927905621869}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WallDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1015,7 +1018,8 @@ MonoBehaviour:
   <DetectedColliders>k__BackingField: []
   _layerMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 264
+  _dontAddWhenOtherColliderIsTrigger: 1
 --- !u!1 &8010755595008893883
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,7 +1030,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3657791064930194032}
   - component: {fileID: 5694445000811933294}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
