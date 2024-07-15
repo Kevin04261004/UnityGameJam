@@ -46,6 +46,22 @@ public class PlayerHandler : MonoBehaviour
         Init();
     }
 
+    #region ForDebug
+
+    [ContextMenu("Lamp")]
+    public void ChangeToLamp()
+    {
+        CurType = EMovementType.Lamp;
+    }
+
+    [ContextMenu("PlatForm")]
+    public void ChangeToPlatform()
+    {
+        CurType = EMovementType.Platformer;
+    }
+
+    #endregion
+    
     private void Init()
     {
         TryGetComponent(out _inputHandler);
@@ -133,7 +149,7 @@ public class PlayerHandler : MonoBehaviour
         switch (CurType)
         {
             case EMovementType.Platformer:
-                return _inputHandler.SprintKeyDown ? _platformMovementDataSO.SprintSpeed : _platformMovementDataSO.WalkSpeed;
+                return _inputHandler.SprintKeyPress ? _platformMovementDataSO.SprintSpeed : _platformMovementDataSO.WalkSpeed;
             case EMovementType.Lamp:
                 return _lampMovementDataSO.Speed;
             default:

@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerInputHandler : MonoBehaviour
 {
     public bool JumpKeyDown { get; private set; }
-    public bool SprintKeyDown { get; private set; }
+    public bool SprintKeyPress { get; private set; }
     public Vector2 MoveDir { get; private set; }
     public bool InteractKeyDown { get; private set; }
     public void GetJumpInput()
@@ -14,11 +14,11 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void GetInteractInput()
     {
-        InteractKeyDown = Input.GetKey(KeyCode.F);
+        InteractKeyDown = Input.GetKeyDown(KeyCode.F);
     }
     public void GetSprintInput()
     {
-        SprintKeyDown = Input.GetKey(KeyCode.LeftShift);
+        SprintKeyPress = Input.GetKey(KeyCode.LeftShift);
     }
     public void GetMovementInput()
     {
