@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    public enum EMoveDir
-    {
-        Left = -1,
-        None = 0,
-        Right = 1,
-    }
     public bool JumpKeyDown { get; private set; }
     public bool SprintKeyDown { get; private set; }
-    public EMoveDir MoveDir { get; private set; }
+    public Vector2 MoveDir { get; private set; }
+    public bool InteractKeyDown { get; private set; }
     public void GetJumpInput()
     {
         JumpKeyDown = Input.GetKeyDown(KeyCode.Space);
+    }
+
+    public void GetInteractInput()
+    {
+        InteractKeyDown = Input.GetKey(KeyCode.F);
     }
     public void GetSprintInput()
     {
@@ -22,14 +22,25 @@ public class PlayerInputHandler : MonoBehaviour
     }
     public void GetMovementInput()
     {
-        MoveDir = EMoveDir.None;
+        int x = 0;
+        int y = 0;
         if (Input.GetKey(KeyCode.A))
         {
-            MoveDir--;
+            x--;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            MoveDir++;
+            x++;
         }
+        if (Input.GetKey(KeyCode.W))
+        {
+            y++;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            y--;
+        }
+
+        MoveDir = new Vector2(x, y);
     }
 }

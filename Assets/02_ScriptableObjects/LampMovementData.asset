@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d4103622d6a28c4785b7e1191803e0d, type: 3}
-  m_Name: PlayerMovementData
+  m_Script: {fileID: 11500000, guid: 98c89f041e7e46fe831ef864c5ebd2d5, type: 3}
+  m_Name: LampMovementData
   m_EditorClassIdentifier: 
-  <SprintSpeed>k__BackingField: 8
-  <WalkSpeed>k__BackingField: 4
-  <JumpStrength>k__BackingField: 7
+  <Speed>k__BackingField: 5
+  <JumpStrength>k__BackingField: 7.5

@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PlayerMovementData", menuName = "Scriptable Object/PlayerMovementData SO", order = 0)]
-public class PlayerMovementData : ScriptableObject
+[CreateAssetMenu(fileName = "PlayerMovementData", menuName = "Scriptable Object/PlatformMovementData SO", order = 0)]
+public class PlatformMovementData : ScriptableObject
 {
     [Header("Move")]
     [field: SerializeField] public float SprintSpeed { get; set; }
