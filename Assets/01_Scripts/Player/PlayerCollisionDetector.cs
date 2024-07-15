@@ -8,11 +8,10 @@ public class PlayerCollisionDetector : MonoBehaviour
     private Vector3 _forwardCheckPos;
     private Vector2 _boxSize;
     private Vector2 _boxStartPos;
-    
     public bool IsWall { get; private set; }
     [SerializeField] private LayerMask _groundMask;
 
-    [SerializeField] private Collider2D[] _forwardObjects;
+    [SerializeField] private GetDetectedColliderArray _wallCheck;
     
     public bool Grounded { get; set; }
     private void Awake()
@@ -31,28 +30,12 @@ public class PlayerCollisionDetector : MonoBehaviour
 
     public void CheckForward(PlayerInputHandler.EMoveDir moveDir)
     {
-        // TODO: 앞부분 체크해서 오브젝트 배열에 넣어두기.
-        switch (moveDir)
-        {
-            case PlayerInputHandler.EMoveDir.Left:
-                _boxStartPos = transform.position + _forwardCheckPos;
-                break;
-            case PlayerInputHandler.EMoveDir.None:
-                break;
-            case PlayerInputHandler.EMoveDir.Right:
-                _boxStartPos = transform.position - _forwardCheckPos;
-                break;
-            default:
-                Debug.Assert(false, "add case");
-                break;
-        }
-        _forwardObjects = Physics2D.OverlapBoxAll(_boxStartPos, _boxSize, 0);
+        
     }
 
     public void CheckWall()
     {
-        // TODO: 배열에 벽 레이어가 있으면 플레이어와 벽간의 x축 좌표의 거리를 구하고, 만약 0.1보다 작으면 bIsWall = true 아니면 false; 
-        IsWall = false;
+        IsWall = _wallCheck.DetectedColliders.Count >= 1;
     }
 
     public void CheckInterationObject()
