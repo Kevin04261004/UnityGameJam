@@ -21,7 +21,7 @@ public class PlayerHandler : MonoBehaviour
         _inputHandler.GetJumpInput();
         _inputHandler.GetSprintInput();
         _inputHandler.GetMovementInput();
-
+        
         if (_inputHandler.JumpKeyDown) // && CanJump())
         {
             _movement.Jump(_movementDataSO.JumpStrength);
@@ -32,9 +32,11 @@ public class PlayerHandler : MonoBehaviour
     {
         /* physics */
         _detector.CheckOnGround();
+        _detector.CheckForward(_inputHandler.MoveDir);
         
+        // TODO: 나중에 벽타기 버그를 고치기 위해서 벽이 앞에 있으면 이동 못하게 만들기.
         /* move */
         float speed = _inputHandler.SprintKeyDown ? _movementDataSO.SprintSpeed : _movementDataSO.WalkSpeed;
-        _movement.Move(_inputHandler.MoveDirX, speed);
+        _movement.Move(_inputHandler.MoveDir, speed);
     }
 }

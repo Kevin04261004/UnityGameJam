@@ -1,11 +1,17 @@
+using System;
 using UnityEngine;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    public bool JumpKeyDown { get; set; }
-    public bool SprintKeyDown { get; set; }
-    public float MoveDirX { get; set; }
-
+    public enum EMoveDir
+    {
+        Left = -1,
+        None = 0,
+        Right = 1,
+    }
+    public bool JumpKeyDown { get; private set; }
+    public bool SprintKeyDown { get; private set; }
+    public EMoveDir MoveDir { get; private set; }
     public void GetJumpInput()
     {
         JumpKeyDown = Input.GetKeyDown(KeyCode.Space);
@@ -14,17 +20,16 @@ public class PlayerInputHandler : MonoBehaviour
     {
         SprintKeyDown = Input.GetKey(KeyCode.LeftShift);
     }
-
     public void GetMovementInput()
     {
-        MoveDirX = 0;
+        MoveDir = EMoveDir.None;
         if (Input.GetKey(KeyCode.A))
         {
-            MoveDirX--;
+            MoveDir--;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            MoveDirX++;
+            MoveDir++;
         }
     }
 }
