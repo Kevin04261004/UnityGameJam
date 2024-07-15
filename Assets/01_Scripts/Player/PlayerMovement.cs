@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     
     public void Move(PlayerInputHandler.EMoveDir moveDir, float speed)
     {
-        float x = (int)moveDir * speed * Time.deltaTime;
+        float x = (int)moveDir * speed;
         _rigid.velocity = new Vector2(x, _rigid.velocity.y);
         FlipGO(moveDir);
     }
@@ -37,6 +37,6 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Jump(float strength)
     {
-        _rigid.velocity = new Vector2(_rigid.velocity.x, strength * Time.deltaTime);
+        _rigid.velocity = new Vector2(_rigid.velocity.x, strength);
     }
 }

@@ -22,7 +22,7 @@ public class PlayerHandler : MonoBehaviour
         _inputHandler.GetSprintInput();
         _inputHandler.GetMovementInput();
         
-        if (_inputHandler.JumpKeyDown) // && CanJump())
+        if (_inputHandler.JumpKeyDown && _detector.Grounded)
         {
             _movement.Jump(_movementDataSO.JumpStrength);
         }

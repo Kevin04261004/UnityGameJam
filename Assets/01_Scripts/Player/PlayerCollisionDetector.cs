@@ -9,6 +9,7 @@ public class PlayerCollisionDetector : MonoBehaviour
     private Vector2 _boxSize;
     private Vector2 _boxStartPos;
     public bool IsWall { get; private set; }
+    private Vector2 _overlapSize = new Vector2(0.4f, 0.4f);
     [SerializeField] private LayerMask _groundMask;
 
     [SerializeField] private GetDetectedColliderArray _wallCheck;
@@ -24,10 +25,34 @@ public class PlayerCollisionDetector : MonoBehaviour
 
     public void CheckOnGround()
     {
-        Debug.DrawRay(transform.position - _groundCheckPos, Vector2.down, Color.green, 0.1f);
-        Grounded = Physics2D.Raycast(transform.position - _groundCheckPos, Vector2.down, 0.1f, _groundMask);
+        Grounded = Physics2D.OverlapCapsule(transform.position - _groundCheckPos, _overlapSize, CapsuleDirection2D.Horizontal, 0, _groundMask);
     }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        DrawCapsuleGizmo(transform.position - _groundCheckPos, _overlapSize, CapsuleDirection2D.Horizontal);
+    }
+    private void DrawCapsuleGizmo(Vector2 position, Vector2 size, CapsuleDirection2D direction)
+    {
+        float radius = size.y / 2;
+        Vector2 top = position + Vector2.up * (size.y / 2 - radius);
+        Vector2 bottom = position - Vector2.up * (size.y / 2 - radius);
 
+        Gizmos.DrawWireSphere(top, radius);
+        Gizmos.DrawWireSphere(bottom, radius);
+
+        if (direction == CapsuleDirection2D.Horizontal)
+        {
+            Gizmos.DrawLine(top + Vector2.left * radius, bottom + Vector2.left * radius);
+            Gizmos.DrawLine(top + Vector2.right * radius, bottom + Vector2.right * radius);
+        }
+        else
+        {
+            Gizmos.DrawLine(top + Vector2.up * radius, bottom + Vector2.up * radius);
+            Gizmos.DrawLine(top + Vector2.down * radius, bottom + Vector2.down * radius);
+        }
+    }
     public void CheckForward(PlayerInputHandler.EMoveDir moveDir)
     {
         
