@@ -8,6 +8,8 @@ public class PlayerCollisionDetector : MonoBehaviour
     private Vector3 _forwardCheckPos;
     private Vector2 _boxSize;
     private Vector2 _boxStartPos;
+    
+    public bool IsWall { get; private set; }
     [SerializeField] private LayerMask _groundMask;
 
     [SerializeField] private Collider2D[] _forwardObjects;
@@ -46,5 +48,18 @@ public class PlayerCollisionDetector : MonoBehaviour
         }
         _forwardObjects = Physics2D.OverlapBoxAll(_boxStartPos, _boxSize, 0);
     }
-    
+
+    public void CheckWall()
+    {
+        // TODO: 배열에 벽 레이어가 있으면 플레이어와 벽간의 x축 좌표의 거리를 구하고, 만약 0.1보다 작으면 bIsWall = true 아니면 false; 
+        IsWall = false;
+    }
+
+    public void CheckInterationObject()
+    {
+        // TODO: 배열들 전부 돌면서 상호작용 있으면 IInteratable 호출.
+        
+        
+    }
+
 }

@@ -34,6 +34,8 @@ public class PlayerHandler : MonoBehaviour
         _detector.CheckOnGround();
         _detector.CheckForward(_inputHandler.MoveDir);
         
+        _detector.CheckWall();
+        _detector.CheckInterationObject();
         // TODO: 나중에 벽타기 버그를 고치기 위해서 벽이 앞에 있으면 이동 못하게 만들기.
         /* move */
         float speed = _inputHandler.SprintKeyDown ? _movementDataSO.SprintSpeed : _movementDataSO.WalkSpeed;
