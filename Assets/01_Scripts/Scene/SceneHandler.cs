@@ -13,6 +13,7 @@ public class SceneHandler : MonoBehaviour
     public static readonly string Stage2 = "Stage2";
     public static readonly string Stage3 = "Stage3";
     public static readonly string Stage4 = "Stage4";
+    public static readonly string EndScene = "EndScene";
     public Dictionary<string, LoadSceneMode> loadScenes = new Dictionary<string, LoadSceneMode>();
     public Image fadeImage;
     public float fadeDuration = 1.0f;
@@ -71,6 +72,7 @@ public class SceneHandler : MonoBehaviour
         loadScenes.Add(Stage2, LoadSceneMode.Additive);
         loadScenes.Add(Stage3, LoadSceneMode.Additive);
         loadScenes.Add(Stage4, LoadSceneMode.Additive);
+        loadScenes.Add(EndScene, LoadSceneMode.Additive);
     }
 
     public void LoadSceneWithFade(string sceneName)
@@ -181,6 +183,11 @@ public class SceneHandler : MonoBehaviour
             {
                 yield return SceneManager.UnloadSceneAsync(Stage4);
             }
+        }
+
+        if (sceneName == EndScene)
+        {
+            ;
         }
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, mode);
         while (!asyncLoad.isDone)
