@@ -117,6 +117,10 @@ public class PlayerHandler : MonoBehaviour
 
         /* move */
         float speed = GetSpeed();
+        if (_inputHandler.MoveDir == Vector2.zero)
+        {
+            speed = 0;
+        }
         _detector[CurType].CheckWall();
         if (_detector[CurType].IsWall)
         {
