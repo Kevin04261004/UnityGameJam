@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DYLib;
 using UnityEngine;
 
 public class PlayerHandler : MonoBehaviour
@@ -10,12 +11,12 @@ public class PlayerHandler : MonoBehaviour
         Lamp,
     }
     private PlayerInputHandler _inputHandler;
-    private Dictionary<EMovementType, BaseMovement> _movement = new Dictionary<EMovementType, BaseMovement>();
-    private Dictionary<EMovementType, BaseCollisionDetector> _detector = new Dictionary<EMovementType, BaseCollisionDetector>();
-    private Dictionary<EMovementType, Collider2D> _collider = new Dictionary<EMovementType, Collider2D>();
-    private Dictionary<EMovementType, GameObject> _mesh = new Dictionary<EMovementType, GameObject>();
-    
     [SerializeField] private EMovementType curType = EMovementType.Platformer;
+
+    [SerializeField] private SerializableDictionary<EMovementType, BaseMovement> _movement = new SerializableDictionary<EMovementType, BaseMovement>();
+    [SerializeField] private SerializableDictionary<EMovementType, BaseCollisionDetector> _detector = new SerializableDictionary<EMovementType, BaseCollisionDetector>();
+    [SerializeField] private SerializableDictionary<EMovementType, Collider2D> _collider = new SerializableDictionary<EMovementType, Collider2D>();
+    [SerializeField] private SerializableDictionary<EMovementType, GameObject> _mesh = new SerializableDictionary<EMovementType, GameObject>();
     public EMovementType CurType
     {
         get => curType;
@@ -66,25 +67,6 @@ public class PlayerHandler : MonoBehaviour
     {
         TryGetComponent(out _inputHandler);
         
-        BaseCollisionDetector[] detectors = GetComponents<BaseCollisionDetector>();
-        if (detectors != null)
-        {
-            foreach (var dectector in detectors)
-            {
-                Debug.Assert(!_detector.ContainsKey(dectector.MovementType), $"이미 {dectector.MovementType} Key가 존재합니다.");
-                _detector.Add(dectector.MovementType, dectector);
-            }
-        }
-        
-        BaseMovement[] movements = GetComponents<BaseMovement>();
-        if (movements != null)
-        {
-            foreach (var movement in movements)
-            {
-                Debug.Assert(!_movement.ContainsKey(movement.MovementType), $"이미 {movement.MovementType} Key가 존재합니다.");
-                _movement.Add(movement.MovementType, movement);
-            }
-        }
         Debug.Assert(_platformMovementDataSO != null);
         Debug.Assert(_lampMovementDataSO != null);
         Debug.Assert(_platformCollider != null);

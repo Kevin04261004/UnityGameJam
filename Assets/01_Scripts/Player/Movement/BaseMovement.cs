@@ -2,7 +2,6 @@ using UnityEngine;
 
 public abstract class BaseMovement : MonoBehaviour
 {
-    public abstract PlayerHandler.EMovementType MovementType { get; protected set; }
     protected Rigidbody2D _rigid;
     private static readonly Vector3 leftFlip = new Vector3(-1, 1, 1);
     private static readonly Vector3 rightFlip = new Vector3(1, 1, 1);

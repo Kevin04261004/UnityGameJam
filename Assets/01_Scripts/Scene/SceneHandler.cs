@@ -6,15 +6,6 @@ using UnityEngine.UI;
 
 public class SceneHandler : MonoBehaviour
 {
-    public enum EGameType
-    {
-        Start,
-        Title,
-        Stage1,
-        Stage2,
-        Stage3,
-        Stage4,
-    }
     public static SceneHandler Instance { get; private set; }
     public static readonly string TitleScene = "TitleScene";
     public static readonly string CharacterScene = "CharacterScene";
@@ -25,8 +16,7 @@ public class SceneHandler : MonoBehaviour
     public Dictionary<string, LoadSceneMode> loadScenes = new Dictionary<string, LoadSceneMode>();
     public Image fadeImage;
     public float fadeDuration = 1.0f;
-    public EGameType GameType { get; private set; } = EGameType.Start;
-    
+
     /* Debug */
 
     [ContextMenu("Stage 1")]
@@ -52,7 +42,6 @@ public class SceneHandler : MonoBehaviour
 
     private void Awake()
     {
-        Application.targetFrameRate = 60;
         if (Instance == null)
         {
             Instance = this;
@@ -118,7 +107,7 @@ public class SceneHandler : MonoBehaviour
     {
         if (sceneName == TitleScene)
         {
-            GameType = EGameType.Title;
+            GameManager.Instance.GameType = GameManager.EGameType.Title;
         }
         else
         {
@@ -130,7 +119,7 @@ public class SceneHandler : MonoBehaviour
         
         if (sceneName == Stage1)
         {
-            GameType = EGameType.Stage1;
+            GameManager.Instance.GameType = GameManager.EGameType.Stage1;
             if (!IsSceneLoaded(CharacterScene))
             {
                 SceneManager.LoadSceneAsync(CharacterScene, mode);
@@ -145,7 +134,8 @@ public class SceneHandler : MonoBehaviour
         }
         if (sceneName == Stage2)
         {
-            GameType = EGameType.Stage2;
+            GameManager.Instance.GameType = GameManager.EGameType.Stage2;
+
             if (!IsSceneLoaded(CharacterScene))
             {
                 SceneManager.LoadSceneAsync(CharacterScene, mode);
@@ -160,7 +150,8 @@ public class SceneHandler : MonoBehaviour
         }
         if (sceneName == Stage3)
         {
-            GameType = EGameType.Stage3;
+            GameManager.Instance.GameType = GameManager.EGameType.Stage3;
+
             if (!IsSceneLoaded(CharacterScene))
             {
                 SceneManager.LoadSceneAsync(CharacterScene, mode);
@@ -175,7 +166,8 @@ public class SceneHandler : MonoBehaviour
         }
         if (sceneName == Stage4)
         {
-            GameType = EGameType.Stage4;
+            GameManager.Instance.GameType = GameManager.EGameType.Stage4;
+
             if (!IsSceneLoaded(CharacterScene))
             {
                 SceneManager.LoadSceneAsync(CharacterScene, mode);

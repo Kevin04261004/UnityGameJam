@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class LampMovement : BaseMovement
 {
-    public override PlayerHandler.EMovementType MovementType { get; protected set; } = PlayerHandler.EMovementType.Lamp;
-
     private void Awake()
     {
         TryGetComponent(out _rigid);

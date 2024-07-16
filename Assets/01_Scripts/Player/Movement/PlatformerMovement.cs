@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class PlatformerMovement : BaseMovement
 {
-    public override PlayerHandler.EMovementType MovementType { get; protected set; } = PlayerHandler.EMovementType.Platformer;
-
     private void Awake()
     {
         TryGetComponent(out _rigid);
