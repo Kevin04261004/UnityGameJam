@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -15,6 +18,8 @@ public class SceneHandler : MonoBehaviour
     public static readonly string Stage4 = "Stage4";
     public static readonly string EndScene = "EndScene";
     public Dictionary<string, LoadSceneMode> loadScenes = new Dictionary<string, LoadSceneMode>();
+    // public delegate void SceneLoadedEvent();
+    // public Dictionary<string, SceneLoadedEvent> sceneLoadedEvents = new Dictionary<string, SceneLoadedEvent>();
     public Image fadeImage;
     public float fadeDuration = 1.0f;
 
@@ -56,6 +61,8 @@ public class SceneHandler : MonoBehaviour
     }
     private void Start()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        
         InitSceneInfo();
         if (SceneManager.sceneCount != 1)
         {
@@ -187,7 +194,7 @@ public class SceneHandler : MonoBehaviour
 
         if (sceneName == EndScene)
         {
-            ;
+            yield return SceneManager.UnloadSceneAsync(CharacterScene);
         }
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, mode);
         while (!asyncLoad.isDone)
@@ -196,6 +203,50 @@ public class SceneHandler : MonoBehaviour
         }
     }
 
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (TryGetObjectFromScene(CharacterScene, out PlayerHandler playerHandler))
+        {
+            if (scene.name == Stage1 || scene.name == Stage2 || scene.name == Stage3 || scene.name == Stage4)
+            {
+                GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
+                Debug.Assert(spawnPoint != null, "spawnPoint != null");
+
+                playerHandler.SpawnToPoint(spawnPoint.transform.position);
+            }
+
+            TryGetObjectFromScene(CharacterScene, out Light2D globalLight);
+            Debug.Assert(globalLight != null, "globalLight != null");
+            globalLight.intensity = scene.name == Stage4 ? 0 : 1;
+        }
+        else
+        {
+            Debug.Log("PlayerHandler가 존재하지 않거나, CharacterScene이 아닙니다.");
+        }
+    }
+
+    public static bool TryGetObjectFromScene<T>(string sceneName, out T obj) where T : class
+    {
+        obj = null;
+        
+        for (int i = 0; i < SceneManager.sceneCount; ++i)
+        {
+            Scene curScene = SceneManager.GetSceneAt(i);
+            if (curScene.name != sceneName)
+            {
+                continue;
+            }
+            foreach (var go in curScene.GetRootGameObjects())
+            {
+                if (go.TryGetComponent(out obj))
+                {
+                    return true;
+                }
+            }
+            break;
+        }
+        return false;
+    }
     private bool IsSceneLoaded(string sceneName)
     {
         for (int i = 0; i < SceneManager.sceneCount; ++i)

@@ -57,6 +57,11 @@ public class PlayerHandler : MonoBehaviour
     }
 
     #endregion
+
+    public void SpawnToPoint(Vector3 position)
+    {
+        transform.position = position;
+    }
     
     private void Init()
     {
