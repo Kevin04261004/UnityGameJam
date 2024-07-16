@@ -20,7 +20,7 @@ public class PlayerHandler : MonoBehaviour
     public EMovementType CurType
     {
         get => curType;
-        private set
+        set
         {
             _movement[CurType].enabled = false;
             _detector[CurType].enabled = false;

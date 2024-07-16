@@ -196,6 +196,13 @@ public class SceneHandler : MonoBehaviour
         {
             yield return SceneManager.UnloadSceneAsync(CharacterScene);
         }
+        else
+        {
+            if (IsSceneLoaded(EndScene))
+            {
+                yield return SceneManager.UnloadSceneAsync(EndScene);
+            }
+        }
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, mode);
         while (!asyncLoad.isDone)
         {
@@ -207,6 +214,7 @@ public class SceneHandler : MonoBehaviour
     {
         if (TryGetObjectFromScene(CharacterScene, out PlayerHandler playerHandler))
         {
+            /* spawnPoint */
             if (scene.name == Stage1 || scene.name == Stage2 || scene.name == Stage3 || scene.name == Stage4)
             {
                 GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
@@ -215,9 +223,15 @@ public class SceneHandler : MonoBehaviour
                 playerHandler.SpawnToPoint(spawnPoint.transform.position);
             }
 
+            /* global Light */
             TryGetObjectFromScene(CharacterScene, out Light2D globalLight);
             Debug.Assert(globalLight != null, "globalLight != null");
             globalLight.intensity = scene.name == Stage4 ? 0 : 1;
+            
+            
+            /* 플레이어 폼 체인지 */
+            playerHandler.CurType = scene.name == Stage4
+                ? PlayerHandler.EMovementType.Lamp : PlayerHandler.EMovementType.Platformer;
         }
         else
         {
