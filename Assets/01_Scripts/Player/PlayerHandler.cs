@@ -57,6 +57,11 @@ public class PlayerHandler : MonoBehaviour
     }
 
     #endregion
+
+    public void SpawnToPoint(Vector3 position)
+    {
+        transform.position = position;
+    }
     
     private void Init()
     {
@@ -99,9 +104,6 @@ public class PlayerHandler : MonoBehaviour
         /* physics */
         _detector[CurType].CheckOnGround();
 
-        // _detector.CheckInterationObject();
-        
-        
         /* move */
         float speed = GetSpeed();
         _detector[CurType].CheckWall();

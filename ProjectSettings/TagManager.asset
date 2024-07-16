@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - PushableObject
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
