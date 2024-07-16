@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class Abstract_Enemy : MonoBehaviour, IDamageable
 {
     [Header("Parameters")]
-    protected int _hp;
+    [SerializeField] protected int _hp;
 
     public int HP
     {
@@ -23,7 +23,7 @@ public abstract class Abstract_Enemy : MonoBehaviour, IDamageable
         
     }
 
-    protected int _damage;
+    [SerializeField] protected int _damage;
 
     public int Damage
     {
@@ -40,7 +40,7 @@ public abstract class Abstract_Enemy : MonoBehaviour, IDamageable
         
     }
 
-    [field:SerializeField]protected LayerMask target_layer;
+    [SerializeField] protected LayerMask target_layer;
     
     
     abstract protected void Die();

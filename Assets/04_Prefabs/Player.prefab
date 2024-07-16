@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 5170465585972224053}
   - component: {fileID: 461503072044266540}
   - component: {fileID: 73424851025957790}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: InteractorDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 792747755518149204}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: PlatformDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 744966142818509502}
   - component: {fileID: 739852692185697007}
   - component: {fileID: 4073378732719931356}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: WallDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 360049955191645339}
   - component: {fileID: 6206515950300844646}
   - component: {fileID: 8341958679189784295}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: InteractorDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -916,7 +916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1730529958061275438}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: LampDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -951,7 +951,7 @@ GameObject:
   - component: {fileID: 3558712884621162760}
   - component: {fileID: 6389897888874011054}
   - component: {fileID: 8116694927905621869}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: WallDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
