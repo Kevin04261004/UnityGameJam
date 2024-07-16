@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -45,7 +44,27 @@ public class SceneHandler : MonoBehaviour
     {
         LoadSceneWithFade(Stage4);
     }
-    
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            StartStage1();
+        }
+        else if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            StartStage2();
+        }
+        else if (Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            StartStage3();
+        }
+        else if (Input.GetKeyDown(KeyCode.Keypad4))
+        {
+            StartStage4();
+        }
+    }
+
     #endregion
 
     private void Awake()

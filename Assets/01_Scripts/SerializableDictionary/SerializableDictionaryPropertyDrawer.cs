@@ -1,11 +1,14 @@
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using System.Reflection;
 using System;
 
 namespace DYLib
 {
+#if UNITY_EDITOR
 	[CustomPropertyDrawer(typeof(SerializableDictionaryBase), true)]
 #if NET_4_6 || NET_STANDARD_2_0
 	[CustomPropertyDrawer(typeof(SerializableHashSetBase), true)]
@@ -607,4 +610,5 @@ namespace DYLib
 			return EditorGUI.GetPropertyHeight(property);
 		}
 	}
+#endif
 }

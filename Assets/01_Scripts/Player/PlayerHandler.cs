@@ -11,12 +11,13 @@ public class PlayerHandler : MonoBehaviour
         Lamp,
     }
     private PlayerInputHandler _inputHandler;
-    [SerializeField] private EMovementType curType = EMovementType.Platformer;
 
+    [SerializeField] private EMovementType curType = EMovementType.Platformer;
     [SerializeField] private SerializableDictionary<EMovementType, BaseMovement> _movement = new SerializableDictionary<EMovementType, BaseMovement>();
     [SerializeField] private SerializableDictionary<EMovementType, BaseCollisionDetector> _detector = new SerializableDictionary<EMovementType, BaseCollisionDetector>();
     [SerializeField] private SerializableDictionary<EMovementType, Collider2D> _collider = new SerializableDictionary<EMovementType, Collider2D>();
     [SerializeField] private SerializableDictionary<EMovementType, GameObject> _mesh = new SerializableDictionary<EMovementType, GameObject>();
+    [SerializeField] private SerializableDictionary<EMovementType, Animator> _animator = new SerializableDictionary<EMovementType, Animator>();
     public EMovementType CurType
     {
         get => curType;
@@ -77,6 +78,7 @@ public class PlayerHandler : MonoBehaviour
             Debug.Assert(_detector.ContainsKey(m));
             Debug.Assert(_collider.ContainsKey(m));
             Debug.Assert(_mesh.ContainsKey(m));
+            Debug.Assert(_animator.ContainsKey(m));
         }
 
         CurType = curType;
@@ -87,6 +89,15 @@ public class PlayerHandler : MonoBehaviour
         _inputHandler.GetSprintInput();
         _inputHandler.GetMovementInput();
         _inputHandler.GetInteractInput();
+        if (_inputHandler.MoveDir != Vector2.zero)
+        {
+            _animator[CurType].SetBool("Move", true);
+        }
+        else
+        {
+            _animator[CurType].SetBool("Move", false);
+        }
+        
         if (_inputHandler.JumpKeyDown && _detector[CurType].Grounded)
         {
             _movement[CurType].Jump(GetJumpStrength());
@@ -112,6 +123,7 @@ public class PlayerHandler : MonoBehaviour
             speed = 0;
         }
         _movement[CurType].Move(_inputHandler.MoveDir, speed);
+        _animator[CurType].SetFloat("Speed", speed);
     }
 
     private float GetSpeed()
