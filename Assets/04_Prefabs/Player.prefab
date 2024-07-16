@@ -321,12 +321,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curType: 1
+  _movement:
+    m_keys: 0000000001000000
+    m_values:
+    - {fileID: 6153319548862734003}
+    - {fileID: 1431123411106832180}
+  _detector:
+    m_keys: 0000000001000000
+    m_values:
+    - {fileID: 436562091962201884}
+    - {fileID: 3178088413860974874}
+  _collider:
+    m_keys: 0000000001000000
+    m_values:
+    - {fileID: 999708779736190310}
+    - {fileID: 6725898797285262563}
+  _mesh:
+    m_keys: 0000000001000000
+    m_values:
+    - {fileID: 8010755595008893883}
+    - {fileID: 286823458424502286}
   _platformMovementDataSO: {fileID: 11400000, guid: 778cbd937c01a3c488fa0960e5baf160, type: 2}
   _lampMovementDataSO: {fileID: 11400000, guid: dd0e8ad0f13d99d41b067632fd8d44f0, type: 2}
-  _platformCollider: {fileID: 999708779736190310}
-  _lampCollider: {fileID: 6725898797285262563}
-  _platformMesh: {fileID: 8010755595008893883}
-  _lampMesh: {fileID: 286823458424502286}
 --- !u!114 &6988194881694199130
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -37,11 +37,6 @@ public class PlayerHandler : MonoBehaviour
     [SerializeField] private PlatformMovementData _platformMovementDataSO;
     [SerializeField] private LampMovementData _lampMovementDataSO;
 
-    [SerializeField] private Collider2D _platformCollider;
-    [SerializeField] private Collider2D _lampCollider;
-    [SerializeField] private GameObject _platformMesh;
-    [SerializeField] private GameObject _lampMesh;
-
     private void Awake()
     {
         Init();
@@ -69,15 +64,6 @@ public class PlayerHandler : MonoBehaviour
         
         Debug.Assert(_platformMovementDataSO != null);
         Debug.Assert(_lampMovementDataSO != null);
-        Debug.Assert(_platformCollider != null);
-        Debug.Assert(_lampCollider != null);
-        Debug.Assert(_platformMesh != null);
-        Debug.Assert(_lampMesh != null);
-        
-        _collider.Add(EMovementType.Platformer, _platformCollider);
-        _collider.Add(EMovementType.Lamp, _lampCollider);
-        _mesh.Add(EMovementType.Platformer, _platformMesh);
-        _mesh.Add(EMovementType.Lamp, _lampMesh);
         
         /* Debug */
         foreach (EMovementType m in Enum.GetValues(typeof(EMovementType)))

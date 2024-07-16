@@ -3,7 +3,6 @@ using UnityEngine;
 
 public abstract class BaseCollisionDetector : MonoBehaviour
 {
-    public abstract PlayerHandler.EMovementType MovementType { get; protected set; }
     protected Vector3 _groundCheckPos;
     public bool IsWall { get; protected set; }
     public bool Grounded { get; protected set; }
