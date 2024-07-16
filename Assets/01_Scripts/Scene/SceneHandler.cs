@@ -17,7 +17,7 @@ public class SceneHandler : MonoBehaviour
     public Image fadeImage;
     public float fadeDuration = 1.0f;
 
-    /* Debug */
+    #region Debug
 
     [ContextMenu("Stage 1")]
     private void StartStage1()
@@ -39,6 +39,8 @@ public class SceneHandler : MonoBehaviour
     {
         LoadSceneWithFade(Stage4);
     }
+    
+    #endregion
 
     private void Awake()
     {

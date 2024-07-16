@@ -99,9 +99,6 @@ public class PlayerHandler : MonoBehaviour
         /* physics */
         _detector[CurType].CheckOnGround();
 
-        // _detector.CheckInterationObject();
-        
-        
         /* move */
         float speed = GetSpeed();
         _detector[CurType].CheckWall();
