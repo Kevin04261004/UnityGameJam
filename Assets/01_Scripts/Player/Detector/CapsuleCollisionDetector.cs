@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PlatformerCollisionDetector : BaseCollisionDetector
+public class CapsuleCollisionDetector : BaseCollisionDetector
 {
     [field: SerializeField] public CapsuleCollider2D _collider { get; private set; }
 

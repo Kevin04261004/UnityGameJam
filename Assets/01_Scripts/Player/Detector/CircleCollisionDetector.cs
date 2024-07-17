@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class LampCollisionDetector : BaseCollisionDetector
+public class CircleCollisionDetector : BaseCollisionDetector
 {
     [field: SerializeField] public CircleCollider2D _collider { get; private set; }
     private void Awake()

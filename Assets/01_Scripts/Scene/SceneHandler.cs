@@ -259,18 +259,13 @@ public class SceneHandler : MonoBehaviour
             {
             	playerHandler.CurType = PlayerHandler.EMovementType.Run;
             }
-            if (scene.name == Stage3)
+            else if (scene.name == Stage3)
             {
                 playerHandler.CurType = PlayerHandler.EMovementType.Static;
             }
             else if (scene.name == Stage4)
             {
                 playerHandler.CurType = PlayerHandler.EMovementType.Lamp;
-            }
-            else
-            {
-            	Debug.Log("Not selected Form");
-            	playerHandler.CurType = PlayerHandler.EMovementType.Platformer;
             }
         }
         else

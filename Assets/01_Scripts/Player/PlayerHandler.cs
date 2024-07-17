@@ -32,15 +32,25 @@ public class PlayerHandler : MonoBehaviour
     #region ForDebug
 
     [ContextMenu("Lamp")]
-    public void ChangeToLamp()
+    private void ChangeToLamp()
     {
         CurType = EMovementType.Lamp;
     }
 
     [ContextMenu("PlatForm")]
-    public void ChangeToPlatform()
+    private void ChangeToPlatform()
     {
         CurType = EMovementType.Platformer;
+    }
+    [ContextMenu("Static")]
+    private void ChangeToStatic()
+    {
+        CurType = EMovementType.Static;
+    }
+    [ContextMenu("Runner")]
+    private void ChangeToRunner()
+    {
+        CurType = EMovementType.Run;
     }
 
     #endregion

@@ -29,7 +29,7 @@ public class PlatformerPlayer : BasePlayer
         float speed = _inputHandler.SprintKeyPress
             ? _platformMovementDataSO.SprintSpeed
             : _platformMovementDataSO.WalkSpeed;
-        if (_inputHandler.MoveDir == Vector2.zero)
+        if (_inputHandler.MoveDir.x == 0)
         {
             speed = 0;
         }

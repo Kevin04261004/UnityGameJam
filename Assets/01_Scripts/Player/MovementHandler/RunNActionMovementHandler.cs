@@ -49,7 +49,7 @@ public class RunNActionMovementHandler : BasePlayer
             ? _runMovementDataSO.SprintSpeed
             : _runMovementDataSO.WalkSpeed) + playerStats.ChangedSpeed;
         
-        if (_inputHandler.MoveDir == Vector2.zero)
+        if (_inputHandler.MoveDir.x == 0)
         {
             speed = 0;
         }

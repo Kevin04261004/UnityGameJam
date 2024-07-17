@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PushableObject
   - SpawnPoint
+  - BounceAbleWall
   layers:
   - Default
   - TransparentFX

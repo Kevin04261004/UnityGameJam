@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98c89f041e7e46fe831ef864c5ebd2d5, type: 3}
   m_Name: LampMovementData
   m_EditorClassIdentifier: 
-  <Speed>k__BackingField: 5
+  <Speed>k__BackingField: 3
   <JumpStrength>k__BackingField: 7.5

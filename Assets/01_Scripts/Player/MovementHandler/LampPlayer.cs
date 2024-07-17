@@ -27,7 +27,7 @@ public class LampPlayer : BasePlayer
         base.HandlePhysics();
 
         float speed = _lampMovementDataSO.Speed;
-        if (_inputHandler.MoveDir == Vector2.zero)
+        if (_inputHandler.MoveDir.x == 0)
         {
             speed = 0;
         }
