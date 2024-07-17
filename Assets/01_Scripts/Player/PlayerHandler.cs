@@ -10,6 +10,8 @@ public class PlayerHandler : MonoBehaviour
         Platformer,
         Static,
         Lamp,
+        Run,
+        
     }
     [SerializeField] private EMovementType curType = EMovementType.Platformer;
 

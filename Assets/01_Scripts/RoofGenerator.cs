@@ -13,6 +13,11 @@ public class RoofGenerator : MonoBehaviour
 
     [Range(0.1f,5.0f)]
     [SerializeField] private float fallDelay;
+
+    [Range(0, 1000)] [SerializeField] private int variableRange;
+    [Range(0f, 100f)] [SerializeField] private float fallSpeed;
+
+    [SerializeField]private bool fallInAwake = false;
     
     private void Awake()
     {
@@ -59,12 +64,12 @@ public class RoofGenerator : MonoBehaviour
                 go.GetComponent<SpriteRenderer>().color = rand == 0 ? Color.white : Color.red;
                 
                 float xPos = xInterval *  j;
-                float yPos = (yInterval *  j) + (Random.Range(-50,50) / 100f);
+                float yPos = (yInterval *  j) + (Random.Range(-variableRange,variableRange) / 100f);
                 go.transform.position = points[i].position +  new Vector3(xPos, yPos);
                 go.gameObject.name = $"FallObject_{i}_{j}";
                 
                 _fallingObjects.Add(fallingObject);
-                fallingObject.FallSpeed += ((fallingObject.FallSpeed * i)) +((fallingObject.FallSpeed * j) / interval) ;
+                fallingObject.FallSpeed += ((fallSpeed * i)) +((fallSpeed * j) / interval) ;
                 //Debug.Log( $"{fallingObject.name} :: {fallingObject.FallSpeed}");
                 
             }
@@ -75,9 +80,15 @@ public class RoofGenerator : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(IFallObjects(new WaitForSeconds(fallDelay)));
+        if (fallInAwake)
+            Fallobjects();
     }
 
+    public void Fallobjects()
+    {
+        StartCoroutine(IFallObjects(new WaitForSeconds(fallDelay)));
+    }
+    
     private IEnumerator IFallObjects(WaitForSeconds fallingDelay)
     {
         foreach (var obj in _fallingObjects)

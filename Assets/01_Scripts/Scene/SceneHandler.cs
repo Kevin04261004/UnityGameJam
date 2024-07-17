@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -254,8 +255,18 @@ public class SceneHandler : MonoBehaviour
             
             
             /* 플레이어 폼 체인지 */
-            playerHandler.CurType = scene.name == Stage4
-                ? PlayerHandler.EMovementType.Lamp : PlayerHandler.EMovementType.Platformer;
+            // 코드 수정 . 2024.07.17.21-33 , 작업자 : 김상우 
+            /* playerHandler.CurType = scene.name == Stage4
+                ? PlayerHandler.EMovementType.Lamp : PlayerHandler.EMovementType.Platformer; | Before Code */
+            
+            if (scene.name == Stage4)
+                playerHandler.CurType = PlayerHandler.EMovementType.Lamp;
+            else if (scene.name == Stage1)
+                playerHandler.CurType = PlayerHandler.EMovementType.Run;
+            else 
+                playerHandler.CurType = PlayerHandler.EMovementType.Platformer;
+
+
         }
         else
         {
