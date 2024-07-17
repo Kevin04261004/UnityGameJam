@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Obstacle : Abstract_Enemy
 {
+    
     private void Awake()
     {
         this.GetComponent<Collider2D>().isTrigger = true;
@@ -11,18 +12,21 @@ public class Obstacle : Abstract_Enemy
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Player Hit");
-        if (!other.gameObject.layer.Equals(targetLayer.value))
+        
+        if (other.gameObject.tag != targetTag)
         {
             return;
         }
 
+        
+        
         IDamageable damageable;
 
         if (other.gameObject.TryGetComponent(out damageable))
         {
             damageable.TakeDamage(this.Damage);
         }
+        
     }
 
     protected override void Die()

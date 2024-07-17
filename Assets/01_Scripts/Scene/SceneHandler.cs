@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -254,6 +255,10 @@ public class SceneHandler : MonoBehaviour
             
             
             /* 플레이어 폼 체인지 */
+            if (scene.name == Stage1)
+            {
+            	playerHandler.CurType = PlayerHandler.EMovementType.Run;
+            }
             if (scene.name == Stage3)
             {
                 playerHandler.CurType = PlayerHandler.EMovementType.Static;
@@ -261,6 +266,11 @@ public class SceneHandler : MonoBehaviour
             else if (scene.name == Stage4)
             {
                 playerHandler.CurType = PlayerHandler.EMovementType.Lamp;
+            }
+            else
+            {
+            	Debug.Log("Not selected Form");
+            	playerHandler.CurType = PlayerHandler.EMovementType.Platformer;
             }
         }
         else

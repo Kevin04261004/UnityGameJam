@@ -3,20 +3,27 @@ using UnityEngine;
 
 public class Accelator : MonoBehaviour, IInteractableObject
 {
-    [Range(0.1f,float.MaxValue)]
+    [Range(0.1f,30f)]
     [SerializeField] private float accelarSpeed = 1f;
-    private PlayerHandler player;
+    private PlayerStats player;
     
     public void Interact()
     {
-        // TODO -> 플레이어 가속 코드 필요 
-        
+        player.ChangedSpeed += accelarSpeed;
+        this.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<PlayerHandler>(out player))
+        //플레이어가 아닐 시 return 
+        if (!other.gameObject.CompareTag("Player"))
         {
+            return;
+        }
+
+        if (other.TryGetComponent<PlayerStats>(out player))
+        {
+            //Debug.Log($"player Speed : {player.ChangedSpeed} , After : {player.ChangedSpeed + this.accelarSpeed}");
             Interact();    
         }
     }
