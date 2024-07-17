@@ -1,53 +1,49 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public abstract class Abstract_Enemy : MonoBehaviour, IDamageable
 {
+    [FormerlySerializedAs("_hp")]
     [Header("Parameters")]
-    [SerializeField] protected int _hp;
+    [SerializeField] protected int hp;
 
-    public int HP
+    public virtual int HP
     {
-        get
-        {
-            return _hp;
-        }
+        get => hp;
         private set
         {
-            if (_hp - value <= 0)
+            if (hp - value <= 0)
             {
                 Die();
-                _hp = 0;
+                hp = 0;
             }
-            _hp = value;
+            hp = value;
         }
         
     }
 
-    [SerializeField] protected int _damage;
+    [FormerlySerializedAs("_damage")] [SerializeField] protected int damage;
 
-    public int Damage
+    public virtual int Damage
     {
-        get
-        {
-            return _damage;
-        }
+        get => damage;
         private set
         {
-            if (_damage < 0)
-                _damage = -_damage;
-            _damage = value;
+            if (damage < 0)
+                damage = -damage;
+            damage = value;
         }
         
     }
 
-    [SerializeField] protected LayerMask target_layer;
+    [FormerlySerializedAs("target_layer")] [SerializeField] protected LayerMask targetLayer;
     
     
     abstract protected void Die();
 
-    public virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(int _damage)
     {
-        _hp -= damage;
+        HP -= _damage;
     }
     
 }

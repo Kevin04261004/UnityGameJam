@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cave_fall_tile_1_0: -525624379056226854
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
