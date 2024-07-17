@@ -2,7 +2,7 @@
 
 public class StaticPlayer : BasePlayer
 {
-    [SerializeField] private ;
+    [SerializeField] private Note note;
     public override void HandleMovement()
     {
         base.HandleMovement();

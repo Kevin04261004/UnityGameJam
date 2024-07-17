@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 56b9a06d105f11549a5663648c22240c
+guid: 52dd79a987708d7489371f35e3122116
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -787331374672348274
-    second: rafuta_jump_0004_fall_0
+      213: 170322187620495681
+    second: rafuta_jump_0004_inair_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rafuta_jump_0004_fall_0
+      name: rafuta_jump_0004_inair_0
       rect:
         serializedVersion: 2
         x: 18
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e8b72244946d215f0800000000000000
-      internalID: -787331374672348274
+      spriteID: 141bc72902b1d5200800000000000000
+      internalID: 170322187620495681
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      rafuta_jump_0004_fall_0: -787331374672348274
+      rafuta_jump_0004_inair_0: 170322187620495681
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
