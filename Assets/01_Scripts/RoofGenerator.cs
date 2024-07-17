@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,6 +9,7 @@ public class RoofGenerator : MonoBehaviour
     
     [SerializeField] private Falling_Object fallingObjectPrefab; // falling object 변경 필요 
     [SerializeField] private List<Sprite> roofSprites;
+    [SerializeField] private Transform point;
     [SerializeField] private List<Transform> points; // Vector2 , 그래프 편집 툴 전환 필요
     private List<Falling_Object> _fallingObjects;
 
@@ -32,6 +34,9 @@ public class RoofGenerator : MonoBehaviour
             _fallingObjects = new List<Falling_Object>();
         }
         _fallingObjects.Clear();
+
+        points = point.GetComponentsInChildren<Transform>().ToList();
+        points.Remove(point.transform);
         
         // sort points by x pos 
         points.Sort((transform1, transform2) => { return transform1.position.x.CompareTo(transform2.position.x);});
@@ -57,7 +62,7 @@ public class RoofGenerator : MonoBehaviour
             
             for (int j = 0; j < interval; j++)
             {
-                Falling_Object fallingObject = Instantiate(fallingObjectPrefab);
+                Falling_Object fallingObject = Instantiate(fallingObjectPrefab, transform, true);
                 GameObject go = fallingObject.gameObject;
                 int rand = Random.Range(0, 2);
                 go.GetComponent<SpriteRenderer>().sprite = roofSprites[rand];
@@ -71,7 +76,7 @@ public class RoofGenerator : MonoBehaviour
                 _fallingObjects.Add(fallingObject);
                 fallingObject.FallSpeed += ((fallSpeed * i)) +((fallSpeed * j) / interval) ;
                 //Debug.Log( $"{fallingObject.name} :: {fallingObject.FallSpeed}");
-                
+
             }
             
             
