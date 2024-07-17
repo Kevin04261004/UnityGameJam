@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: cc47552d1534cc044a7ea67035b263cb
+guid: e331915bb16557741a131dcb383eed26
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4766663381660378341
-    second: cave_background_3_2_0
-  - first:
-      213: 7241462002034767164
-    second: cave_background_3_2_1
+      213: 5393205000677698185
+    second: rafuta_walk_knife_0001_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cave_background_3_2_0
+      name: rafuta_walk_knife_0001_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 592
-        width: 453
-        height: 346
+        x: 16
+        y: 1
+        width: 102
+        height: 121
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5e4aabb3717962240800000000000000
-      internalID: 4766663381660378341
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cave_background_3_2_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 453
-        height: 326
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c3575cde257de7460800000000000000
-      internalID: 7241462002034767164
+      spriteID: 98a214aaf5388da40800000000000000
+      internalID: 5393205000677698185
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -159,9 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      cave_background_3_2_0: 4766663381660378341
-      cave_background_3_2_1: 7241462002034767164
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

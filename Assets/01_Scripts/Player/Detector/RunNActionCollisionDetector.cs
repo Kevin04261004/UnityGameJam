@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RunNActionCollisionDetector : BaseCollisionDetector
 {
-    [field: SerializeField] public CapsuleCollider2D _collider { get; private set; }
+    [field: SerializeField] public BoxCollider2D _collider { get; private set; }
     [field: SerializeField] private LayerMask _platformMask;
     
     private void Awake()
