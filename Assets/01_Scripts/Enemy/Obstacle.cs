@@ -12,7 +12,7 @@ public class Obstacle : Abstract_Enemy
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Player Hit");
-        if (!other.gameObject.layer.Equals(target_layer.value))
+        if (!other.gameObject.layer.Equals(targetLayer.value))
         {
             return;
         }
@@ -30,7 +30,7 @@ public class Obstacle : Abstract_Enemy
         this.gameObject.SetActive(false);
     }
 
-    public override void TakeDamage(int damage)
+    public override void TakeDamage(int _damage)
     {
         return;
     }

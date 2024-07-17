@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -12,6 +10,9 @@ public class RoofGenerator : MonoBehaviour
     [SerializeField] private List<Sprite> roofSprites;
     [SerializeField] private List<Transform> points; // Vector2 , 그래프 편집 툴 전환 필요
     private List<Falling_Object> _fallingObjects;
+
+    [Range(0.1f,5.0f)]
+    [SerializeField] private float fallDelay;
     
     private void Awake()
     {
@@ -30,7 +31,14 @@ public class RoofGenerator : MonoBehaviour
         // sort points by x pos 
         points.Sort((transform1, transform2) => { return transform1.position.x.CompareTo(transform2.position.x);});
         
+        GenerateRoof();
+       
         
+        
+    }
+
+    private void GenerateRoof()
+    {
         //AnimationCurve
 
         float width =  fallingObjectPrefab.transform.localScale.x;
@@ -51,23 +59,23 @@ public class RoofGenerator : MonoBehaviour
                 go.GetComponent<SpriteRenderer>().color = rand == 0 ? Color.white : Color.red;
                 
                 float xPos = xInterval *  j;
-                float yPos = yInterval *  j;
+                float yPos = (yInterval *  j) + (Random.Range(-50,50) / 100f);
                 go.transform.position = points[i].position +  new Vector3(xPos, yPos);
                 go.gameObject.name = $"FallObject_{i}_{j}";
                 
                 _fallingObjects.Add(fallingObject);
-
+                fallingObject.FallSpeed += ((fallingObject.FallSpeed * i)) +((fallingObject.FallSpeed * j) / interval) ;
+                //Debug.Log( $"{fallingObject.name} :: {fallingObject.FallSpeed}");
+                
             }
             
             
         }
-        
-        
     }
 
     private void Start()
     {
-        StartCoroutine(IFallObjects(new WaitForSeconds(0.2f)));
+        StartCoroutine(IFallObjects(new WaitForSeconds(fallDelay)));
     }
 
     private IEnumerator IFallObjects(WaitForSeconds fallingDelay)
