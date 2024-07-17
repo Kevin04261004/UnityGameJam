@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public abstract class BaseMovementHandler : MonoBehaviour
+public abstract class BasePlayer : MonoBehaviour
 {
     [field: SerializeField] public BaseMovement _movement { get; protected set; }
     [field: SerializeField] public BaseCollisionDetector _detector { get; protected set; }

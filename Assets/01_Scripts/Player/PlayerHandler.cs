@@ -15,13 +15,14 @@ public class PlayerHandler : MonoBehaviour
     }
     [SerializeField] private EMovementType curType = EMovementType.Platformer;
 
-    [SerializeField] private SerializableDictionary<EMovementType, BaseMovementHandler> _movementHandler =
-        new SerializableDictionary<EMovementType, BaseMovementHandler>();
+    [SerializeField] private SerializableDictionary<EMovementType, BasePlayer> _movementHandler =
+        new SerializableDictionary<EMovementType, BasePlayer>();
     public EMovementType CurType
     {
         get => curType;
         set
         {
+            _movementHandler[CurType]._movement.FreezeCharacter();
             _movementHandler[CurType].Deactivate();
             curType = value;
             _movementHandler[CurType].Activate();
@@ -43,13 +44,14 @@ public class PlayerHandler : MonoBehaviour
     }
 
     #endregion
-    private void Awake()
+    private void Start()
     {
         Init();
     }
 
     public void SpawnToPoint(Vector3 position)
     {
+        // TODO: rigidbody velocity 0으로.
         transform.position = position;
     }
     

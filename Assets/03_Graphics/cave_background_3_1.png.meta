@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cave_background_3_1_0: 8992964901853278668
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -2,7 +2,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class RunNActionMovementHandler : BaseMovementHandler
+public class RunNActionMovementHandler : BasePlayer
 {
     [SerializeField] private RunMovementData _runMovementDataSO;
     [SerializeField] private PlayerStats playerStats;
