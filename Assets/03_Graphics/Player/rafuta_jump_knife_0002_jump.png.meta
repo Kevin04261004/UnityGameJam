@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rafuta_jump_knife_0002_jump_0: 5042367384636277778
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

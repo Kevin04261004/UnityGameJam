@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rafuta_idle_knife_0002_0: 3616119563198565310
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rafuta_walk_knife_0003_0: -5375317864572007829
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

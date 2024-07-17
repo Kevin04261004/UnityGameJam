@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rafuta_run_knife_0000_0: -2093890800207258117
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

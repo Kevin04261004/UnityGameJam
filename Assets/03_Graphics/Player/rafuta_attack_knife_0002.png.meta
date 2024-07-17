@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rafuta_attack_knife_0002_0: 7859506377852117386
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
