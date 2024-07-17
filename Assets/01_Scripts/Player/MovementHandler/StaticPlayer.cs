@@ -1,4 +1,4 @@
-﻿public class StaticMovementHandler : BaseMovementHandler
+﻿public class StaticPlayer : BasePlayer
 {
     public override void HandleMovement()
     {

@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 
-public class PlatformerMovementHandler : BaseMovementHandler
+public class LampPlayer : BasePlayer
 {
-    [SerializeField] private PlatformMovementData _platformMovementDataSO;
+    [SerializeField] private LampMovementData _lampMovementDataSO;
     public override void HandleMovement()
     {
         base.HandleMovement();
         
         if (_inputHandler.JumpKeyDown && _detector.Grounded)
         {
-            _movement.Jump(_platformMovementDataSO.JumpStrength);
+            _movement.Jump(_lampMovementDataSO.JumpStrength);
             _animator.SetTrigger(EAnimationKeys.Jump.ToString());
         }
         
@@ -25,10 +25,8 @@ public class PlatformerMovementHandler : BaseMovementHandler
     public override void HandlePhysics()
     {
         base.HandlePhysics();
-        
-        float speed = _inputHandler.SprintKeyPress
-            ? _platformMovementDataSO.SprintSpeed
-            : _platformMovementDataSO.WalkSpeed;
+
+        float speed = _lampMovementDataSO.Speed;
         if (_inputHandler.MoveDir == Vector2.zero)
         {
             speed = 0;
