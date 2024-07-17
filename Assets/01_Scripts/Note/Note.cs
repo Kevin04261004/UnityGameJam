@@ -59,7 +59,7 @@ public class Note : MonoBehaviour
             case EState.End:
                 break;
             case EState.Shoot:
-                ShootPhysicsUpdate();
+                // DrawRayGetDir(transform.right);
                 break;
             default:
                 Debug.Assert(false, "Add case");
@@ -73,7 +73,9 @@ public class Note : MonoBehaviour
         {
             return;
         }
-        
+
+        // Vector2 t = other.ClosestPoint(transform.position);
+        DrawRayGetDir(transform.right);
         Bounce();
     }
 
@@ -129,10 +131,10 @@ public class Note : MonoBehaviour
         _rigid.velocity = transform.right * Speed;
     }
     
-    private void ShootPhysicsUpdate()
+    private void DrawRayGetDir(Vector3 target)
     {
-        Debug.DrawRay(transform.position, transform.right * RayLength, Color.green);
-        hits = Physics2D.RaycastAll(transform.position, transform.right, RayLength);
+        Debug.DrawRay(transform.position, target * RayLength, Color.green);
+        hits = Physics2D.RaycastAll(transform.position, target, RayLength);
         foreach (var hit in hits)
         {
             if (!hit.transform.CompareTag(BounceAbleWall))
@@ -142,7 +144,7 @@ public class Note : MonoBehaviour
             Vector2 normal = hit.normal;
             Debug.DrawRay(hit.point, normal * RayLength, Color.blue, 1f);
 
-            Vector2 inDirection = transform.right;
+            Vector2 inDirection = target;
             Debug.DrawRay(hit.point, inDirection * RayLength, Color.green, 1f);
 
 
