@@ -254,8 +254,14 @@ public class SceneHandler : MonoBehaviour
             
             
             /* 플레이어 폼 체인지 */
-            playerHandler.CurType = scene.name == Stage4
-                ? PlayerHandler.EMovementType.Lamp : PlayerHandler.EMovementType.Platformer;
+            if (scene.name == Stage3)
+            {
+                playerHandler.CurType = PlayerHandler.EMovementType.Static;
+            }
+            else if (scene.name == Stage4)
+            {
+                playerHandler.CurType = PlayerHandler.EMovementType.Lamp;
+            }
         }
         else
         {

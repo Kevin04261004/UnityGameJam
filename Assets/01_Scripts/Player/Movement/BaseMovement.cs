@@ -25,5 +25,9 @@ public abstract class BaseMovement : MonoBehaviour
         }
     }
 
+    public void FreezeCharacter()
+    {
+        _rigid.velocity = Vector2.zero;
+    }
     public abstract void Jump(float strength);
 }

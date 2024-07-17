@@ -20,6 +20,7 @@ public class PlayerHandler : MonoBehaviour
         get => curType;
         set
         {
+            _movementHandler[CurType]._movement.FreezeCharacter();
             _movementHandler[CurType].Deactivate();
             curType = value;
             _movementHandler[CurType].Activate();
@@ -41,7 +42,7 @@ public class PlayerHandler : MonoBehaviour
     }
 
     #endregion
-    private void Awake()
+    private void Start()
     {
         Init();
     }
