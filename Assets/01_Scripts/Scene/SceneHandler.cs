@@ -222,6 +222,11 @@ public class SceneHandler : MonoBehaviour
                 yield return SceneManager.UnloadSceneAsync(EndScene);
             }
         }
+
+        if (IsSceneLoaded(sceneName))
+        {
+            yield break;
+        }
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, mode);
         while (!asyncLoad.isDone)
         {

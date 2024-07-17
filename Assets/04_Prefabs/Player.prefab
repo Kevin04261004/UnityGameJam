@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7854919021144958391}
   - component: {fileID: 5903758227146504879}
-  - component: {fileID: 9196313127008496649}
+  - component: {fileID: 9146450678702352523}
+  - component: {fileID: 3496553892186606105}
   m_Layer: 9
   m_Name: LampMesh
   m_TagString: Untagged
@@ -32,6 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6160593332051744920}
+  - {fileID: 1357977872200702958}
   m_Father: {fileID: 450192210817923233}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5903758227146504879
@@ -89,7 +91,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9196313127008496649
+--- !u!95 &9146450678702352523
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286823458424502286}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3496553892186606105
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,49 +122,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 286823458424502286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Script: {fileID: 11500000, guid: c2898cdd48f7e754bb4cd3bc6f65d093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
-  m_LightType: 3
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
-  m_LightCookieSprite: {fileID: 0}
-  m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_OverlapOperation: 0
-  m_NormalMapDistance: 3
-  m_NormalMapQuality: 2
-  m_UseNormalMap: 0
-  m_ShadowsEnabled: 1
-  m_ShadowIntensity: 0.75
-  m_ShadowSoftness: 0.3
-  m_ShadowSoftnessFalloffIntensity: 0.5
-  m_ShadowVolumeIntensityEnabled: 0
-  m_ShadowVolumeIntensity: 0.75
-  m_LocalBounds:
-    m_Center: {x: 0, y: -0.00000011920929, z: 0}
-    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 3
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &462730047357280150
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,6 +237,7 @@ GameObject:
   - component: {fileID: 1431123411106832180}
   - component: {fileID: 436562091962201884}
   - component: {fileID: 3178088413860974874}
+  - component: {fileID: 6595964437077935412}
   - component: {fileID: 999708779736190310}
   - component: {fileID: 6725898797285262563}
   m_Layer: 9
@@ -323,27 +308,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curType: 1
   _movement:
-    m_keys: 0000000001000000
+    m_keys: 000000000100000002000000
     m_values:
     - {fileID: 6153319548862734003}
+    - {fileID: 6595964437077935412}
     - {fileID: 1431123411106832180}
   _detector:
-    m_keys: 0000000001000000
+    m_keys: 000000000100000002000000
     m_values:
+    - {fileID: 436562091962201884}
     - {fileID: 436562091962201884}
     - {fileID: 3178088413860974874}
   _collider:
-    m_keys: 0000000001000000
+    m_keys: 000000000100000002000000
     m_values:
+    - {fileID: 999708779736190310}
     - {fileID: 999708779736190310}
     - {fileID: 6725898797285262563}
   _mesh:
-    m_keys: 0000000001000000
+    m_keys: 000000000100000002000000
     m_values:
     - {fileID: 5028038743629869927}
+    - {fileID: 5028038743629869927}
     - {fileID: 286823458424502286}
-  _platformMovementDataSO: {fileID: 11400000, guid: 778cbd937c01a3c488fa0960e5baf160, type: 2}
-  _lampMovementDataSO: {fileID: 11400000, guid: dd0e8ad0f13d99d41b067632fd8d44f0, type: 2}
 --- !u!114 &6988194881694199130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316220f45e1f52547b04886ffb1852c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
+  _platformMovementDataSO: {fileID: 11400000, guid: 778cbd937c01a3c488fa0960e5baf160, type: 2}
 --- !u!114 &1431123411106832180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ae2c020fb734937b3a023774afb7fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
+  _lampMovementDataSO: {fileID: 11400000, guid: dd0e8ad0f13d99d41b067632fd8d44f0, type: 2}
 --- !u!114 &436562091962201884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,6 +407,19 @@ MonoBehaviour:
   _wallCheck: {fileID: 8116694927905621869}
   _interactCheck: {fileID: 8341958679189784295}
   <_collider>k__BackingField: {fileID: 6725898797285262563}
+--- !u!114 &6595964437077935412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524715037152880910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89cf0534983a48de8e186b67284f5a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
 --- !u!70 &999708779736190310
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -451,7 +455,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.75, y: 2}
+  m_Size: {x: 0.75, y: 1.8}
   m_Direction: 0
 --- !u!58 &6725898797285262563
 CircleCollider2D:
@@ -725,6 +729,90 @@ MonoBehaviour:
     Time: 0
     Smoothing: 0
     IgnoreY: 0
+--- !u!1 &4786242861229516080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1357977872200702958}
+  - component: {fileID: 3361467446008944660}
+  m_Layer: 9
+  m_Name: Light2d
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1357977872200702958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4786242861229516080}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7854919021144958391}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3361467446008944660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4786242861229516080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 2
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_LightVolumeIntensity: 1
+  m_LightVolumeEnabled: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowsEnabled: 1
+  m_ShadowIntensity: 0.75
+  m_ShadowSoftness: 0.3
+  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 3
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &5028038743629869927
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,8 +823,10 @@ GameObject:
   m_Component:
   - component: {fileID: 292390084431674222}
   - component: {fileID: 8262477852748270701}
+  - component: {fileID: 2834391941461410723}
+  - component: {fileID: 1045580642427984012}
   m_Layer: 0
-  m_Name: PlayerMesh
+  m_Name: RafutaMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -800,7 +890,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -5966126582170262960, guid: 4bdb9330013ade5419cbfcb04d93fdcd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -812,6 +902,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2834391941461410723
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5028038743629869927}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cfa33c392193ed0469965edb9e5f88b9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1045580642427984012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5028038743629869927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2898cdd48f7e754bb4cd3bc6f65d093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6040154463321808740
 GameObject:
   m_ObjectHideFlags: 0

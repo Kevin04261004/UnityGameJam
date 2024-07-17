@@ -9,7 +9,7 @@ public class Falling_Object : MonoBehaviour
 
     public float FallSpeed
     {
-        get { return fallSpeed;}
+        get => fallSpeed;
         set
         {
             fallSpeed = value;
@@ -27,9 +27,10 @@ public class Falling_Object : MonoBehaviour
 
     public bool IsFall
     {
-        get { return _isFall; }
-        set { _isFall = value; }
+        get => _isFall;
+        set => _isFall = value;
     }
+    
 
     private void FixedUpdate()
     {
