@@ -9,4 +9,8 @@ public class CallEventWhenStart : MonoBehaviour
         OnStart.Invoke();
     }
 
+    public void SetBGM(AudioClip audioClip)
+    {
+        BGMManager.Instance.PlayBGM(audioClip);
+    }
 }

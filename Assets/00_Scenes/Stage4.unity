@@ -1660,7 +1660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6025606102753205256, guid: d05f045da036ede4e8e0b60350b8cbf9, type: 3}
       propertyPath: m_Mass
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6025606102753205256, guid: d05f045da036ede4e8e0b60350b8cbf9, type: 3}
       propertyPath: m_Constraints
@@ -18426,6 +18426,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1880315572}
+        m_TargetAssemblyTypeName: CallEventWhenStart, Assembly-CSharp
+        m_MethodName: SetBGM
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 1331e78b97fed2c4aa99c05b5f3a6093, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1904071622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19380,7 +19392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6025606102753205256, guid: d05f045da036ede4e8e0b60350b8cbf9, type: 3}
       propertyPath: m_Mass
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6025606102753205256, guid: d05f045da036ede4e8e0b60350b8cbf9, type: 3}
       propertyPath: m_Constraints

@@ -25122,6 +25122,14 @@ MonoBehaviour:
         m_CallState: 2
   EndToReadyTime: 2
   RayLength: 2
+  pianoKeys:
+  - {fileID: 8300000, guid: a2bd5aae6f921b94d8cfcfadb1bac353, type: 3}
+  - {fileID: 8300000, guid: 87f0fd5a6d3ca7947aaa55ebe9da9973, type: 3}
+  - {fileID: 8300000, guid: 8b70450b998ae6646853862481511c26, type: 3}
+  - {fileID: 8300000, guid: 06e3d1f28623b1344a1f33c6cb95d2ba, type: 3}
+  - {fileID: 8300000, guid: 7ba394a5a31542149b5d2bb172b6830c, type: 3}
+  - {fileID: 8300000, guid: 7a8169379aa956c4590a495c86079b43, type: 3}
+  - {fileID: 8300000, guid: 709d00eaa2a61f14bac865611f4dfec3, type: 3}
 --- !u!58 &2102427929
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -13,20 +13,20 @@ public class Stage3LevelHandler : MonoBehaviour
     [ContextMenu("Level 1")]
     private void Level1()
     {
-        StartLevel(1);
+        StartLevelWithFade(1);
     }
     [ContextMenu("Level 2")]
     private void Level2()
     {
-        StartLevel(2);
+        StartLevelWithFade(2);
     }
     [ContextMenu("Level 3")]
     private void Level3()
     {
-        StartLevel(3);
+        StartLevelWithFade(3);
     }
 
-    public void StartLevel(int level)
+    public void StartLevelWithFade(int level)
     {
         if (coroutine != null)
         {
@@ -34,6 +34,18 @@ public class Stage3LevelHandler : MonoBehaviour
             coroutine = null;
         }
         coroutine = StartCoroutine(LevelSettingRoutine(level));
+    }
+
+    public void StartLevel(int level)
+    {
+        level--;
+        Debug.Assert(level < levelList.Count);
+        for (int i = 0; i < levelList.Count; ++i)
+        {
+            levelList[i].SetActive(false);
+        }
+        levelList[level].SetActive(true);
+        OnLevelStart[level].Invoke();
     }
     public IEnumerator LevelSettingRoutine(int level)
     {
@@ -53,5 +65,10 @@ public class Stage3LevelHandler : MonoBehaviour
     public void StageClear()
     {
         SceneHandler.Instance.LoadSceneWithFade(SceneHandler.Stage4);
+    }
+
+    public void SetBGM(AudioClip bgm)
+    {
+        BGMManager.Instance.PlayBGM(bgm);
     }
 }
