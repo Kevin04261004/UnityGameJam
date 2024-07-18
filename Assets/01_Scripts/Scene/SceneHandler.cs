@@ -84,6 +84,7 @@ public class SceneHandler : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
         
         InitSceneInfo();
+        OnSceneLoaded(new Scene(), LoadSceneMode.Additive);
         if (SceneManager.sceneCount != 1)
         {
             return;
@@ -240,13 +241,12 @@ public class SceneHandler : MonoBehaviour
         if (TryGetObjectFromScene(CharacterScene, out PlayerHandler playerHandler))
         {
             /* spawnPoint */
-            if (scene.name == Stage1 || scene.name == Stage2 || scene.name == Stage3 || scene.name == Stage4)
+            GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
+            if (spawnPoint != null)
             {
-                GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
-                Debug.Assert(spawnPoint != null, "spawnPoint != null");
-
                 playerHandler.SpawnToPoint(spawnPoint.transform.position);
             }
+
 
             /* global Light */
             TryGetObjectFromScene(CharacterScene, out Light2D globalLight);
