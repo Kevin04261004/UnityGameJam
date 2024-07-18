@@ -69,11 +69,17 @@ public class Note : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.TryGetComponent(out Target target))
+        {
+            target.Active();
+            StartCoroutine(Boom());
+            return;
+        }
+        
         if (!other.CompareTag(BounceAbleWall) || State != EState.Shoot)
         {
             return;
         }
-
         // Vector2 t = other.ClosestPoint(transform.position);
         DrawRayGetDir(transform.right);
         Bounce();

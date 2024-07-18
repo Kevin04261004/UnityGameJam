@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.Cinemachine;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 public class Shooter : BasePlayer
@@ -18,33 +19,53 @@ public class Shooter : BasePlayer
             {
                 return;
             }
-
-            if (value == EState.Charging)
-            {
-                Time.timeScale = 0.7f;
-                
-                // TODO: 카메라 프로세싱 및 이펙트 효과 적용.
-            }
-            else
-            {
-                Time.timeScale = 1f;
-                
-                // TODO: 카메라 프로세싱 및 이펙트 제거.
-            }
         }
     }
 
     [SerializeField] private Note note;
-
+    [SerializeField] private LineRenderer lineRenderer;
+    [SerializeField] private Transform playerLookCamera;
+    private static readonly string BounceAbleWall = "BounceAbleWall";
     public override void HandleMovement()
     {
         base.HandleMovement();
-        /* animator Update */
-        _animator.SetBool(EAnimationKeys.Grounded.ToString(), _detector.Grounded);
+        _inputHandler.SetPlayerLookCamOnInput();
 
         if (_inputHandler.rightMouseButtonPress && note.CanShoot)
         {
             State = EState.Charging;
+            if (transform.position.x <= _inputHandler.mouseWorldPosition.x)
+            {
+                _movement.FlipGO(1);
+            }
+            else
+            {
+                _movement.FlipGO(-1);
+            }
+
+            Vector2 shootDir = _inputHandler.mouseWorldPosition - (Vector2)transform.position;
+            RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, shootDir, float.MaxValue);
+            RaycastHit2D? wallHit = null;
+            foreach (var hit in hits)
+            {
+                if (!hit.transform.CompareTag(BounceAbleWall))
+                {
+                    continue;
+                }
+
+                wallHit = hit;
+                break;
+            }
+
+            if (wallHit != null)
+            {
+                SetLineRenderer(transform.position, (Vector3)wallHit?.point);
+            }
+            else
+            {
+                SetLineRenderer(transform.position, transform.position);
+            }
+            
             if (_inputHandler.leftMouseButtonUp)
             {
                 State = EState.None;
@@ -52,15 +73,31 @@ public class Shooter : BasePlayer
                 Vector3 pos = transform.position;
                 Vector2 dir = _inputHandler.mouseWorldPosition - (Vector2)pos;
                 note.Shoot(dir);
+                SetLineRenderer(transform.position, transform.position);
+                _animator.SetBool("idle", false);
             }
         }
         else
         {
+            if (note.CanShoot)
+            {
+                _animator.SetBool("idle", true);
+            }
             State = EState.None;
+            SetLineRenderer(transform.position, transform.position);
         }
 
+        if (_inputHandler.PlayerLookCamOnKeyDown)
+        {
+            playerLookCamera.gameObject.SetActive(playerLookCamera.gameObject.activeSelf ? false : true);
+        }
     }
 
+    private void SetLineRenderer(Vector3 first, Vector3 second)
+    {
+        lineRenderer.SetPosition(0, first);
+        lineRenderer.SetPosition(1, second);
+    }
     public override void HandlePhysics()
     {
         base.HandlePhysics();

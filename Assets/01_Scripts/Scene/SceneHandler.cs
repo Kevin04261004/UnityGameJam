@@ -308,7 +308,7 @@ public class SceneHandler : MonoBehaviour
 
         return false;
     }
-    private IEnumerator FadeOut()
+    public IEnumerator FadeOut()
     {
         float elapsedTime = 0.0f;
         Color tempColor = fadeImage.color;
@@ -322,7 +322,7 @@ public class SceneHandler : MonoBehaviour
         }
     }
 
-    private IEnumerator FadeIn()
+    public IEnumerator FadeIn()
     {
         float elapsedTime = 0.0f;
         Color tempColor = fadeImage.color;

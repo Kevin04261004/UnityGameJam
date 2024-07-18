@@ -39,7 +39,6 @@ public class ParticleHandler : MonoBehaviour
         {
             ParticleSystem.ShapeModule shapeModule = ps.shape;
             shapeModule.position = tr.position;
-            print(tr.eulerAngles.z);
             
             var mainModule = ps.main;
             float startRotationRadians = -tr.eulerAngles.z * Mathf.Deg2Rad; // 각도를 라디안 단위로 변환

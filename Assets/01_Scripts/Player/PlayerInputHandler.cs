@@ -10,6 +10,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool InteractKeyDown { get; private set; }
     public Vector2 mouseScreenPosition { get; private set; }
     public Vector2 mouseWorldPosition { get; private set; }
+    public bool PlayerLookCamOnKeyDown { get; private set; }
     public bool leftMouseButtonDown { get; private set; }
     public bool rightMouseButtonDown { get; private set; }
     public bool leftMouseButtonPress { get; private set; }
@@ -29,6 +30,11 @@ public class PlayerInputHandler : MonoBehaviour
     public void SetInteractInput()
     {
         InteractKeyDown = Input.GetKeyDown(KeyCode.F);
+    }
+
+    public void SetPlayerLookCamOnInput()
+    {
+        PlayerLookCamOnKeyDown = Input.GetKeyDown(KeyCode.C);
     }
     public void SetSprintInput()
     {

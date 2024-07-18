@@ -7,7 +7,7 @@ public abstract class BaseMovement : MonoBehaviour
     private static readonly Vector3 rightFlip = new Vector3(1, 1, 1);
 
     public abstract void Move(Vector2 moveDir, float speed);
-    protected void FlipGO(int moveDirX)
+    public void FlipGO(int moveDirX)
     {
         switch (moveDirX)
         {
