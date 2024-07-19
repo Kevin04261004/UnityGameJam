@@ -260,7 +260,8 @@ MonoBehaviour:
     (4\uC77C)\n\n\n\n\n\n\n\n\n<color=\"orange\"><size=60>\uC0AC\uC6A9\uD55C \uC5D0\uC14B</size></color>\n\n\n[\uD3F0\uD2B8]\n\n\uC591\uC9C4\uCCB4v0\n\n<font=\"BMJUA_TTF
     SDF\">\uBC30\uB2EC\uC758 \uBBFC\uC871 \uC8FC\uC544</font>\n\n\n\n\n\n[\uADF8\uB798\uD53D
     \uC5D0\uC14B]\n\nHyper Casual FX - Lana Studio\nPixel Art Platformer Village
-    Props - Cainos\n\n\n\n\n[\uC0AC\uC6B4\uB4DC]\n~~~~\n\n\n\n\n\n\n<color=\"yellow\"><size=60>\uAC10\uC0AC\uD55C
+    Props - Cainos\n\n\n\n\n[\uC0AC\uC6B4\uB4DC]\n\nVega - 50meru\n\nDeneb - 50meru\n\nMerope
+    - 50meru\n\n\uAC00\uB77C\uC549\uB2E4 - 50meru\n\n\n\n\n\n\n<color=\"yellow\"><size=60>\uAC10\uC0AC\uD55C
     \uBD84\uB4E4</size></color>\n\nAdvocate\uD300 \uC624\uC9C0\uD604 (\uC9C0\uD604\uC9F1)\n\nAdvocate\uD300
     \uAE40\uC7AC\uC775 (\uACE8\uB4DC\uBA54\uD0C8)\n\nAdvocate\uD300 \uAE40\uBC94\uC8FC
     \uBCF8\uBD80\uC7A5\uB2D8\n\n\uCCAD\uAC15\uBB38\uD654\uC0B0\uC5C5\uB300\uD559\uAD50\n\n\uC720\uB2C8\uD2F0
@@ -573,6 +574,65 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1841091291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1841091292}
+  - component: {fileID: 1841091293}
+  m_Layer: 0
+  m_Name: AwakeInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1841091292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841091291}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1841091293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841091291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4ec326982f62b4f8e55f620fae0369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1498006635}
+        m_TargetAssemblyTypeName: EndSceneHandler, Assembly-CSharp
+        m_MethodName: SetEndingSound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2fe403cf1779b0747b96f11c81028891, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2141652601
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,6 +688,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1841091292}
   - {fileID: 1498006634}
   - {fileID: 2141652603}
   - {fileID: 1580342077}

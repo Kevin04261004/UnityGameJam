@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject _settingPanel;
     public static GameManager Instance { get; private set; }
 
     [SerializeField] private GameObject gameOverUI; 
@@ -35,4 +36,13 @@ public class GameManager : MonoBehaviour
         gameOverUI.SetActive(condition);
     }
     
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void SettingOn()
+    {
+        _settingPanel.SetActive(true);
+    }
 }

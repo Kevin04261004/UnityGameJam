@@ -18,14 +18,15 @@ public class Note : MonoBehaviour
     public Vector2 Dir { get; set; }
     [field: SerializeField]public float Speed { get; set; }
 
-    [field: SerializeField] public float MaxBounceCount { get; set; } = 5;
+    [field: SerializeField] public int MaxBounceCount { get; set; } = 5;
     private Rigidbody2D _rigid;
-    [SerializeField] private float curBounceCount = 0;
+    [SerializeField] private int curBounceCount = 0;
     [SerializeField] private UnityEvent OnReady;
     [SerializeField] private UnityEvent OnShoot;
     [SerializeField] private UnityEvent OnBoomed;
     [SerializeField] private float EndToReadyTime = 1f;
     [SerializeField] private float RayLength = 3f;
+    [SerializeField] private AudioClip[] pianoKeys;
     private RaycastHit2D[] hits;
     private WaitForSeconds endToReadyTimeWFS;
     public bool CanShoot => State == EState.Ready;
@@ -69,11 +70,22 @@ public class Note : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Out"))
+        {
+            StartCoroutine(Boom());
+            return;
+        }
+        if (other.TryGetComponent(out Target target))
+        {
+            target.Active();
+            StartCoroutine(Boom());
+            return;
+        }
+        
         if (!other.CompareTag(BounceAbleWall) || State != EState.Shoot)
         {
             return;
         }
-
         // Vector2 t = other.ClosestPoint(transform.position);
         DrawRayGetDir(transform.right);
         Bounce();
@@ -82,7 +94,7 @@ public class Note : MonoBehaviour
     private void Bounce()
     {
         transform.rotation = ConvertQuaternion(Dir);
-        curBounceCount++;
+        SoundManager.Instance.PlayOneShot(pianoKeys[curBounceCount++]);
         if (curBounceCount > MaxBounceCount)
         {
             StartCoroutine(Boom());

@@ -39,7 +39,10 @@ public class ParticleHandler : MonoBehaviour
         {
             ParticleSystem.ShapeModule shapeModule = ps.shape;
             shapeModule.position = tr.position;
-            shapeModule.rotation = tr.eulerAngles;
+            
+            var mainModule = ps.main;
+            float startRotationRadians = -tr.eulerAngles.z * Mathf.Deg2Rad; // 각도를 라디안 단위로 변환
+            mainModule.startRotation = new ParticleSystem.MinMaxCurve(startRotationRadians);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class SceneHandler : MonoBehaviour
@@ -22,9 +23,9 @@ public class SceneHandler : MonoBehaviour
     // public Dictionary<string, SceneLoadedEvent> sceneLoadedEvents = new Dictionary<string, SceneLoadedEvent>();
     public Image fadeImage;
     public float fadeDuration = 1.0f;
-
+    [field:SerializeField] public StageDataSO _stageDataSO { get; private set; }
+    
     #region Debug
-
     [ContextMenu("Stage 1")]
     private void StartStage1()
     {
@@ -46,16 +47,32 @@ public class SceneHandler : MonoBehaviour
         LoadSceneWithFade(Stage4);
     }
 
+    public void ReLoadCurStage()
+    {
+        if (IsSceneLoaded(_stageDataSO.curStage))
+        {
+            LoadSceneWithFade(_stageDataSO.curStage);
+        }
+    }
+
+    public void ContinueStage()
+    {
+        if (_stageDataSO.curStage != Stage1)
+        {
+            LoadSceneWithFade(_stageDataSO.curStage);
+        }
+    }
+    
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
             StartStage1();
         }
-        else if (Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            StartStage2();
-        }
+        // else if (Input.GetKeyDown(KeyCode.Keypad2))
+        // {
+        //     StartStage2();
+        // }
         else if (Input.GetKeyDown(KeyCode.Keypad3))
         {
             StartStage3();
@@ -84,6 +101,7 @@ public class SceneHandler : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
         
         InitSceneInfo();
+        OnSceneLoaded(new Scene(), LoadSceneMode.Additive);
         if (SceneManager.sceneCount != 1)
         {
             return;
@@ -150,6 +168,7 @@ public class SceneHandler : MonoBehaviour
         
         if (sceneName == Stage1)
         {
+            _stageDataSO.curStage = Stage1;
             GameManager.Instance.GameType = GameManager.EGameType.Stage1;
             if (!IsSceneLoaded(CharacterScene))
             {
@@ -165,6 +184,7 @@ public class SceneHandler : MonoBehaviour
         }
         if (sceneName == Stage2)
         {
+            _stageDataSO.curStage = Stage2;
             GameManager.Instance.GameType = GameManager.EGameType.Stage2;
 
             if (!IsSceneLoaded(CharacterScene))
@@ -181,6 +201,7 @@ public class SceneHandler : MonoBehaviour
         }
         if (sceneName == Stage3)
         {
+            _stageDataSO.curStage = Stage3;
             GameManager.Instance.GameType = GameManager.EGameType.Stage3;
 
             if (!IsSceneLoaded(CharacterScene))
@@ -197,6 +218,7 @@ public class SceneHandler : MonoBehaviour
         }
         if (sceneName == Stage4)
         {
+            _stageDataSO.curStage = Stage4;
             GameManager.Instance.GameType = GameManager.EGameType.Stage4;
 
             if (!IsSceneLoaded(CharacterScene))
@@ -240,13 +262,12 @@ public class SceneHandler : MonoBehaviour
         if (TryGetObjectFromScene(CharacterScene, out PlayerHandler playerHandler))
         {
             /* spawnPoint */
-            if (scene.name == Stage1 || scene.name == Stage2 || scene.name == Stage3 || scene.name == Stage4)
+            GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
+            if (spawnPoint != null)
             {
-                GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
-                Debug.Assert(spawnPoint != null, "spawnPoint != null");
-
                 playerHandler.SpawnToPoint(spawnPoint.transform.position);
             }
+
 
             /* global Light */
             TryGetObjectFromScene(CharacterScene, out Light2D globalLight);
@@ -308,7 +329,7 @@ public class SceneHandler : MonoBehaviour
 
         return false;
     }
-    private IEnumerator FadeOut()
+    public IEnumerator FadeOut()
     {
         float elapsedTime = 0.0f;
         Color tempColor = fadeImage.color;
@@ -322,7 +343,7 @@ public class SceneHandler : MonoBehaviour
         }
     }
 
-    private IEnumerator FadeIn()
+    public IEnumerator FadeIn()
     {
         float elapsedTime = 0.0f;
         Color tempColor = fadeImage.color;
