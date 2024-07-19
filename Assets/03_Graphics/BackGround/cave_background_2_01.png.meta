@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: fa6b9b2eb608dd547bed75c567216ea4
+guid: ac2ee33f0aac33840b96b41a78db0c37
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2587089161333113241
-    second: stage3_BG_2_01_0
-  - first:
-      213: -4888271525683907683
-    second: stage3_BG_2_01_1
+      213: 7848661133807866044
+    second: cave_background_2_01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stage3_BG_2_01_0
+      name: cave_background_2_01_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 958
-        height: 538
+        y: 0
+        width: 453
+        height: 938
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 76ef9706d10d81cd0800000000000000
-      internalID: -2587089161333113241
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stage3_BG_2_01_1
-      rect:
-        serializedVersion: 2
-        x: 488
-        y: 200
-        width: 6
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d9334f152fe592cb0800000000000000
-      internalID: -4888271525683907683
+      spriteID: cb0580b97bb0cec60800000000000000
+      internalID: 7848661133807866044
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      stage3_BG_2_01_0: -2587089161333113241
-      stage3_BG_2_01_1: -4888271525683907683
+      cave_background_2_01_0: 7848661133807866044
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

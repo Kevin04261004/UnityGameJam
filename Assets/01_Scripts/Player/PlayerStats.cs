@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour , IDamageable
     #region Members 
     [Header("Init Stats")] [SerializeField]
     protected int initHp;
+    [SerializeField] protected float attackCooldown = 0.2f;
     
     [Header("Current Stats")]
     [SerializeField] protected int hp;
@@ -48,7 +49,10 @@ public class PlayerStats : MonoBehaviour , IDamageable
     }
     
     private float acclerateTimer;
-    
+    private float attackTimer;
+
+    [field: SerializeField] public bool canAttack { get;  set; }
+
     #endregion
 
     #region Unity Event Functions
@@ -91,7 +95,13 @@ public class PlayerStats : MonoBehaviour , IDamageable
             acclerateTimer -= Time.fixedDeltaTime;
         else
             ChangedSpeed = 0;
-        
+
+        if (attackTimer >= 0)
+            attackTimer -= Time.fixedDeltaTime;
+        else
+            canAttack = true;
+
+
     } 
     
     #endregion 

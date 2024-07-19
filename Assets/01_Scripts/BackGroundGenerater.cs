@@ -27,7 +27,7 @@ public class BackGroundGenerater : MonoBehaviour
             go.transform.localPosition = new Vector2(xInterval * i, yOffset);
             go.name = $"BG_{i}";
         }
-        Instantiate(lastBG).transform.position = new Vector2((bgCount -1 ) * xInterval + (1.8f * lastBG.transform.localScale.x), yOffset);
+        Instantiate(lastBG,this.transform).transform.position = new Vector2((bgCount -1 ) * xInterval + (2.2f * lastBG.transform.localScale.x), yOffset);
 
     }
 
