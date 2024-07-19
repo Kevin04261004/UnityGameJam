@@ -11,7 +11,8 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
     private List<AudioSource> audioSourceList = new List<AudioSource>(5);
     private int startCount = 5;
-    
+
+    [SerializeField] private SoundDataSO _soundDataSO;
     [SerializeField] private AudioMixer AudioMixer;
     [SerializeField] private AudioMixerGroup SFXGroup;
     [SerializeField] private Slider MusicMasterSlider;
@@ -31,11 +32,18 @@ public class SoundManager : MonoBehaviour
         {
             AddAudioSource();
         }
+
+        _soundDataSO.OnLoadDataSuccess += SetVolumes;
         MusicMasterSlider.onValueChanged.AddListener(SetMasterVolume);
-        MusicBGMSlider.onValueChanged.AddListener(SetMusicVolume);
+        MusicBGMSlider.onValueChanged.AddListener(SetBGMVolume);
         MusicSFXSlider.onValueChanged.AddListener(SetSFXVolume);
     }
 
+    public void SaveSoundVolumes()
+    {
+        _soundDataSO.SaveData();
+    }
+    
     public void PlayOneShot(AudioClip clip)
     {
         AudioSource audioSource = GetAudioSource();
@@ -65,18 +73,44 @@ public class SoundManager : MonoBehaviour
         return AddAudioSource();
     }
     
+    private void SetVolumes()
+    {
+        float masterVolume = _soundDataSO.GetVolume("Master");
+        float BGMVolume = _soundDataSO.GetVolume("BGM");
+        float SFXVolume = _soundDataSO.GetVolume("SFX");
+
+        MusicMasterSlider.value = masterVolume;
+        MusicBGMSlider.value = BGMVolume;
+        MusicSFXSlider.value = SFXVolume;
+    }
+    
     public void SetMasterVolume(float volume)
     {
+        if (volume == 0)
+        {
+            AudioMixer.SetFloat("Master", 0);
+        }
         AudioMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
+        _soundDataSO.SetVolume("Master", volume);
     }
- 
-    public void SetMusicVolume(float volume)
+    
+    public void SetBGMVolume(float volume)
     {
+        if (volume == 0)
+        {
+            AudioMixer.SetFloat("BGM", 0);
+        }
         AudioMixer.SetFloat("BGM", Mathf.Log10(volume) * 20);
+        _soundDataSO.SetVolume("BGM", volume);
     }
  
     public void SetSFXVolume(float volume)
     {
+        if (volume == 0)
+        {
+            AudioMixer.SetFloat("SFX", 0);
+        }
         AudioMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+        _soundDataSO.SetVolume("SFX", volume);
     }
 }

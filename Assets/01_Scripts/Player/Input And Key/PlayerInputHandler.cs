@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerInputHandler : MonoBehaviour
 {
+    [SerializeField] private InputDataSO _inputDataSo;
     private Camera mainCamera;
     public bool JumpKeyDown { get; private set; }
     public bool SprintKeyPress { get; private set; }
@@ -25,20 +26,20 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void SetJumpInput()
     {
-        JumpKeyDown = Input.GetKeyDown(KeyCode.Space);
+        JumpKeyDown = Input.GetKeyDown(_inputDataSo[EKeyType.Jump]);
     }
     public void SetInteractInput()
     {
-        InteractKeyDown = Input.GetKeyDown(KeyCode.F);
+        InteractKeyDown = Input.GetKeyDown(_inputDataSo[EKeyType.Interact]);
     }
 
     public void SetPlayerLookCamOnInput()
     {
-        PlayerLookCamOnKeyDown = Input.GetKeyDown(KeyCode.C);
+        PlayerLookCamOnKeyDown = Input.GetKeyDown(_inputDataSo[EKeyType.PlayerCam]);
     }
     public void SetSprintInput()
     {
-        SprintKeyPress = Input.GetKey(KeyCode.LeftShift);
+        SprintKeyPress = Input.GetKey(_inputDataSo[EKeyType.Sprint]);
     }
     public void SetMouseInput()
     {
@@ -55,19 +56,19 @@ public class PlayerInputHandler : MonoBehaviour
     {
         int x = 0;
         int y = 0;
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(_inputDataSo[EKeyType.Left]))
         {
             x--;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(_inputDataSo[EKeyType.Right]))
         {
             x++;
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(_inputDataSo[EKeyType.Up]))
         {
             y++;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(_inputDataSo[EKeyType.Down]))
         {
             y--;
         }
