@@ -38,25 +38,25 @@ namespace DYLib
         {
             UnityEngine.Debug.Assert(condition, getLog(header, str, color, bold));
         }
-        [Conditional("DEBUG")]
-        public static void AssertPause(bool condition, string str, EColor color = EColor.white, bool bold = false)
-        {
-            if (!condition)
-            {
-                LogError(str, color, bold);
-                EditorApplication.isPaused = true;
-            }
-        }
-        [Conditional("DEBUG")]
-        public static void AssertExit(bool condition, string str, EColor color = EColor.white, bool bold = false)
-        {
-            if (!condition)
-            {
-                LogError(str, color, bold);
-                EditorApplication.isPlaying = false;
-                Application.Quit();
-            }
-        }
+        // [Conditional("DEBUG")]
+        // public static void AssertPause(bool condition, string str, EColor color = EColor.white, bool bold = false)
+        // {
+        //     if (!condition)
+        //     {
+        //         LogError(str, color, bold);
+        //         // EditorApplication.isPaused = true;
+        //     }
+        // }
+        // [Conditional("DEBUG")]
+        // public static void AssertExit(bool condition, string str, EColor color = EColor.white, bool bold = false)
+        // {
+        //     if (!condition)
+        //     {
+        //         LogError(str, color, bold);
+        //         EditorApplication.isPlaying = false;
+        //         Application.Quit();
+        //     }
+        // }
         private static string getLog(string header, string str, EColor color, bool bold)
         {
             string logStr = string.Format(formatStr, color, header, str);

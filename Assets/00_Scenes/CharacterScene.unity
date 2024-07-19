@@ -30048,6 +30048,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3279446905668470774, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4900688821763449907, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       propertyPath: _inputDataSo
       value: 
@@ -30094,7 +30098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7153381717936869332, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       propertyPath: curType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7555178088445289777, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       propertyPath: m_IsActive

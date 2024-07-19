@@ -88,9 +88,12 @@ public class SoundManager : MonoBehaviour
     {
         if (volume == 0)
         {
-            AudioMixer.SetFloat("Master", 0);
+            AudioMixer.SetFloat("Master", -80f);
         }
-        AudioMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
+        else
+        {
+            AudioMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
+        }
         _soundDataSO.SetVolume("Master", volume);
     }
     
@@ -98,9 +101,12 @@ public class SoundManager : MonoBehaviour
     {
         if (volume == 0)
         {
-            AudioMixer.SetFloat("BGM", 0);
+            AudioMixer.SetFloat("BGM", -80f);
         }
-        AudioMixer.SetFloat("BGM", Mathf.Log10(volume) * 20);
+        else
+        {
+            AudioMixer.SetFloat("BGM", Mathf.Log10(volume) * 20);
+        }
         _soundDataSO.SetVolume("BGM", volume);
     }
  
@@ -108,9 +114,12 @@ public class SoundManager : MonoBehaviour
     {
         if (volume == 0)
         {
-            AudioMixer.SetFloat("SFX", 0);
+            AudioMixer.SetFloat("SFX", -80f);
         }
-        AudioMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+        else
+        {
+            AudioMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+        }
         _soundDataSO.SetVolume("SFX", volume);
     }
 }

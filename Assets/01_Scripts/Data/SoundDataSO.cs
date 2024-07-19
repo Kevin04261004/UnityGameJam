@@ -16,10 +16,6 @@ public class SoundDataSO : PersistenceDataSO
     }
 
     [SerializeField] private List<SoundVolumeData> soundVolumeDataList = new List<SoundVolumeData>(3);
-    public delegate void SaveDataSuccessEvent();
-    public SaveDataSuccessEvent OnSaveDataSuccess { get; set; }
-    public delegate void LoadDataSuccessEvent();
-    public LoadDataSuccessEvent OnLoadDataSuccess { get; set; }
     public void SetVolume(string groupName, float volume)
     {
         if (TryGetSoundVolumeData(groupName, out SoundVolumeData soundVolumeData))

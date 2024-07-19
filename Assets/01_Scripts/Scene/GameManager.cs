@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject _settingPanel;
     public static GameManager Instance { get; private set; }
     public enum EGameType
     {
@@ -25,5 +26,15 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void SettingOn()
+    {
+        _settingPanel.SetActive(true);
     }
 }

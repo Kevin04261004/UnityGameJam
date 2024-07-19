@@ -8,11 +8,6 @@ using UnityEngine;
 public class InputDataSO : PersistenceDataSO
 {
         [field: SerializeField] public SerializableDictionary<EKeyType, KeyCode> _inputDictionary { get; private set; }
-        public delegate void SaveDataSuccessEvent();
-
-        public SaveDataSuccessEvent OnSaveDataSuccess { get; set; }
-        public delegate void LoadDataSuccessEvent();
-        public LoadDataSuccessEvent OnLoadDataSuccess { get; set; }
         public InputDataSO()
         {
             _inputDictionary = new SerializableDictionary<EKeyType, KeyCode>();
@@ -36,11 +31,11 @@ public class InputDataSO : PersistenceDataSO
         // IDataPersistence 인터페이스로 빼놓아, 모든 IDataPersistence들을 시작 및 종료에 부르고 저장해주는 DataPersistenceManager를 제작함.
         private void OnEnable()
         {
-            Debugger.AssertExit(_inputDictionary.Count == (int)EKeyType.Size, "Input Data SO에서 모든 Key를 설정해주세요.");
+            Debugger.Assert(_inputDictionary.Count == (int)EKeyType.Size, "Input Data SO에서 모든 Key를 설정해주세요.");
         }
         public void SetKeyCode(EKeyType keyType, KeyCode keyCode)
         {
-            Debugger.AssertPause(_inputDictionary.Contains(keyType), "InputData SO 세팅이 필요합니다.");
+            Debugger.Assert(_inputDictionary.Contains(keyType), "InputData SO 세팅이 필요합니다.");
             _inputDictionary[keyType] = keyCode;
         }
 
