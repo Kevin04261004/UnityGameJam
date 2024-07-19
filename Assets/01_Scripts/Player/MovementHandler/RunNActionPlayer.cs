@@ -2,11 +2,12 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class RunNActionMovementHandler : BasePlayer
+public class RunNActionPlayer : BasePlayer
 {
     [SerializeField] private RunMovementData _runMovementDataSO;
     [SerializeField] private PlayerStats playerStats;
     [field: SerializeField] private bool canAttack { get; set; }
+    [field: SerializeField] public RunNActionCollisionDetector _detector { get; protected set; }
     
     
 
@@ -34,7 +35,9 @@ public class RunNActionMovementHandler : BasePlayer
         if (_inputHandler.leftMouseButtonDown && canAttack && _detector.Grounded)
         {
             // TODO -> 공격 및 애니메이션 추가
-            
+            _animator.SetTrigger(EAnimationKeys.Attack.ToString());
+            if ( _detector.CurDamageableObject != null)
+                _detector.CurDamageableObject.TakeDamage(_runMovementDataSO.DamagePower);
         }
         
         /* animator Update */
@@ -44,6 +47,7 @@ public class RunNActionMovementHandler : BasePlayer
     public override void HandlePhysics()
     {
         base.HandlePhysics();
+        _detector.CheckDamageableObject();
 
         float speed = (_inputHandler.SprintKeyPress
             ? _runMovementDataSO.SprintSpeed
@@ -61,6 +65,9 @@ public class RunNActionMovementHandler : BasePlayer
         //Debug.Log($"Speed : {speed}" );
         _movement.Move(_inputHandler.MoveDir, speed);
         _animator.SetFloat(EAnimationKeys.Speed.ToString(), speed);
+
+        
     }
+    
     
 }

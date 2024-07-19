@@ -7,7 +7,7 @@ public class BackGroundGenerater : MonoBehaviour
 {
     [SerializeField] private int bgCount = 10;
     [SerializeField] private float yOffset = 0;
-    [SerializeField] private float xInterval = 4.1f;
+    [SerializeField] private float xInterval = 2f;
     
     [SerializeField] private GameObject prefab;
     [SerializeField] private GameObject lastBG;
@@ -19,13 +19,15 @@ public class BackGroundGenerater : MonoBehaviour
     
     private void Start()
     {
+        xInterval *= prefab.transform.localScale.x;
+        
         for (int i = 0; i < bgCount; i++)
         {
             GameObject go = GenerateBG();
-            go.transform.position = new Vector2(xInterval * i, yOffset);
+            go.transform.localPosition = new Vector2(xInterval * i, yOffset);
             go.name = $"BG_{i}";
         }
-        Instantiate(lastBG).transform.position = new Vector2((bgCount -1 ) * xInterval + 9.25f, yOffset);
+        Instantiate(lastBG).transform.position = new Vector2((bgCount -1 ) * xInterval + (1.8f * lastBG.transform.localScale.x), yOffset);
 
     }
 

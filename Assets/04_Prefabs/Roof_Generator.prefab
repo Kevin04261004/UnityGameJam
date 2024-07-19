@@ -110,8 +110,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallingObjectPrefab: {fileID: 7764202354767768045, guid: 01f3ca7d6836dec45b68119f8574d685, type: 3}
   roofSprites:
-  - {fileID: -525624379056226854, guid: 7aa15e0dd6e1a5f4b951b51cc4d55c77, type: 3}
-  - {fileID: -3110699438758700649, guid: 07cc796cc4fb0e24f80cf93de5b2e7ec, type: 3}
+  - {fileID: 8949178417636919048, guid: f42964ecf2d44ac49b7fc5934aec4652, type: 3}
+  - {fileID: -7790126555800233445, guid: 0336d13b4219e1a44805391c1f73e0e2, type: 3}
+  - {fileID: -5277713913885748752, guid: 437c4f66d8cf290488faf57b0e6e2734, type: 3}
+  - {fileID: -9097954913023201553, guid: 12c7beb152658094b89877c280ae523f, type: 3}
   point: {fileID: 8740917195217794359}
   points: []
   fallDelay: 0.15

@@ -56,8 +56,8 @@ public class Falling_Object : MonoBehaviour
             float dot = Vector2.Dot(dirVec, Vector2.down);
             if (dot >= 0)
             {
-                // TODO -> Add GameOver Action      
-                Debug.Log("GameOver!");
+                //Debug.Log("GameOver!");
+                GameManager.Instance.SetActiveGameOverUI(true);
             }
             
         }

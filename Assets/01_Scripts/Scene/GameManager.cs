@@ -3,6 +3,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
+    [SerializeField] private GameObject gameOverUI; 
+    
     public enum EGameType
     {
         Start,
@@ -26,4 +29,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void SetActiveGameOverUI(bool condition)
+    {
+        gameOverUI.SetActive(condition);
+    }
+    
 }
