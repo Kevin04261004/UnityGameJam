@@ -52,10 +52,10 @@ public class SceneHandler : MonoBehaviour
         {
             StartStage1();
         }
-        else if (Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            StartStage2();
-        }
+        // else if (Input.GetKeyDown(KeyCode.Keypad2))
+        // {
+        //     StartStage2();
+        // }
         else if (Input.GetKeyDown(KeyCode.Keypad3))
         {
             StartStage3();

@@ -24,6 +24,11 @@ public class BGMManager : MonoBehaviour
         {
             _audioSource.Stop();
         }
+
+        if (_audioSource.clip == clip)
+        {
+            return;
+        }
         _audioSource.clip = clip;
         _audioSource.Play();
     }

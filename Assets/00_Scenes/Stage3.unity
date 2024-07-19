@@ -266,7 +266,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Target
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6095380309901539794, guid: 02d32781659eeda498c3176a32082a87, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -311,43 +312,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &132244547 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6772869259011364999, guid: 02d32781659eeda498c3176a32082a87, type: 3}
-  m_PrefabInstance: {fileID: 6885659291234684558}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &132244550 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6636999031053509447, guid: 02d32781659eeda498c3176a32082a87, type: 3}
   m_PrefabInstance: {fileID: 6885659291234684558}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &132244551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 132244547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb933f899da58e4418809bf75186d626, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 50124713}
-        m_TargetAssemblyTypeName: Stage3LevelHandler, Assembly-CSharp
-        m_MethodName: StartLevelWithFade
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &180716314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1306,7 +1275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &580223440
 Transform:
   m_ObjectHideFlags: 0
@@ -1862,7 +1831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1102450375
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19922,7 +19891,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Target
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6095380309901539794, guid: 02d32781659eeda498c3176a32082a87, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -20108,7 +20078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!331 &1987048130
 SpriteMask:
   m_ObjectHideFlags: 0
@@ -20693,6 +20663,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 580223440}
     m_Modifications:
+    - target: {fileID: 6095380309901539794, guid: 02d32781659eeda498c3176a32082a87, type: 3}
+      propertyPath: eventAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 50124713}
     - target: {fileID: 6636999031053509447, guid: 02d32781659eeda498c3176a32082a87, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.78
@@ -20740,10 +20714,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6772869259011364999, guid: 02d32781659eeda498c3176a32082a87, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 132244551}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02d32781659eeda498c3176a32082a87, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
