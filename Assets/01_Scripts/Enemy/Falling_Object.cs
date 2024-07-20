@@ -9,8 +9,8 @@ public class Falling_Object : MonoBehaviour
     [SerializeField] private float fallSpeed;
     private float currentSpeed = 0;
 
-    [SerializeField] private List<AudioClip> impactAudioClips;
-    private AudioSource _audioSource;
+    [field: SerializeField] public bool isSounding { get; set; }
+    
     
     public float FallSpeed
     {
@@ -28,8 +28,6 @@ public class Falling_Object : MonoBehaviour
     private void Awake()
     {
         currentSpeed = fallSpeed * Time.fixedDeltaTime;
-        _audioSource = GetComponent<AudioSource>();
-        
     }
 
     public bool IsFall
@@ -51,8 +49,6 @@ public class Falling_Object : MonoBehaviour
     {
         if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
         {
-            _isFall = false;
-            _audioSource.PlayOneShot(impactAudioClips[Random.Range(0, impactAudioClips.Count)]);
             Destroy(this);
         }
 
