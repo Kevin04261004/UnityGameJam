@@ -369,8 +369,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -331396680530908302, guid: 8954f1ae31bb88a4d86305527bcf0ecd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -502,8 +502,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -331396680530908302, guid: 8954f1ae31bb88a4d86305527bcf0ecd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -635,8 +635,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -331396680530908302, guid: 8954f1ae31bb88a4d86305527bcf0ecd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB300\uCDA9 \uAC8C\uC784 \uC81C\uBAA9"
+  m_text: "\uBE5B\uC744 \uD5A5\uD574\uC11C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c84f0e9e62f1f334a97f50b1fc24d675, type: 2}
   m_sharedMaterial: {fileID: -5516872777329122363, guid: c84f0e9e62f1f334a97f50b1fc24d675, type: 2}
