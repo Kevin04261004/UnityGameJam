@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 61ecc568ae1d5ea42be80ee69b5e2189
+guid: ad60d2e1bb911b24baaea71a51ac3dc0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2076973757731277617
-    second: cave_end_L_0
+      213: 2599969905456701152
+    second: lamp_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,28 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cave_end_L_0
+      name: lamp_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 18
+        height: 36
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape:
-      - - {x: 32, y: 16}
-        - {x: -32, y: 16}
-        - {x: -32, y: -14}
-        - {x: -20, y: -32}
-        - {x: 32, y: -32}
-      tessellationDetail: 0
+      physicsShape: []
+      tessellationDetail: -1
       bones: []
-      spriteID: fc47e922f5b1d23e0800000000000000
-      internalID: -2076973757731277617
+      spriteID: 0eed3719ad2f41420800000000000000
+      internalID: 2599969905456701152
       vertices: []
       indices: 
       edges: []
@@ -130,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 668431a6851802b4684c5e2da9215e53
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -140,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cave_end_L_0: -2076973757731277617
+      lamp_0: 2599969905456701152
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
