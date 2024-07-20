@@ -53858,11 +53858,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5577980898316022325, guid: 90bb5bc9156adab48b46f35ebeec2828, type: 3}
       propertyPath: accelarSpeed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7651282962393907553, guid: 90bb5bc9156adab48b46f35ebeec2828, type: 3}
       propertyPath: m_Name
       value: Accelerator (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651282962393907553, guid: 90bb5bc9156adab48b46f35ebeec2828, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -56058,6 +56062,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5577980898316022325, guid: 90bb5bc9156adab48b46f35ebeec2828, type: 3}
+      propertyPath: accelarTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577980898316022325, guid: 90bb5bc9156adab48b46f35ebeec2828, type: 3}
       propertyPath: accelarSpeed
       value: 2
       objectReference: {fileID: 0}
@@ -56273,7 +56281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8740917195217794359, guid: b12e15bdebcdccc46b630cb62817e875, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8
+      value: -3.22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -57598,7 +57606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6040309765294459953, guid: 3aec161d1c0dd094e9de6857a0d51514, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

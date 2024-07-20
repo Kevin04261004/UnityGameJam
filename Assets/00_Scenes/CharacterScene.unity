@@ -10022,7 +10022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_moveObject: {fileID: 692347755}
   m_shaderPropertyName: _MoveToMaterialUV
-  m_shaderPropertyID: 1583
+  m_shaderPropertyID: 1606
   m_materialData:
   - m_trailRenderer: {fileID: 692347756}
     m_uvTiling: {x: 1, y: 1}
@@ -29927,6 +29927,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 457257900258479670, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.0498734
+      objectReference: {fileID: 0}
     - target: {fileID: 844772400703797824, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       propertyPath: m_Name
       value: Player
@@ -29991,6 +29995,10 @@ PrefabInstance:
       propertyPath: curType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7900669539384157208, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9118282633075658132, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       propertyPath: note
       value: 
@@ -30023,7 +30031,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365478038306601325}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -30039,7 +30047,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7b68b12d1801a4249856f8e53a2f734b, type: 2}
+  - {fileID: 2100000, guid: b5f33379aace95140adb87578a46efa0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30060,7 +30068,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 0.2
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -30069,17 +30077,17 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.032967016
-        value: 0.76173925
-        inSlope: 0.68836653
-        outSlope: 0.68836653
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.22262678
+        outWeight: 0.9999026
       - serializedVersion: 3
-        time: 0.49928945
-        value: 0.5671149
+        time: 0.6641149
+        value: 0.8009262
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -30087,51 +30095,51 @@ TrailRenderer:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.9419579
-        value: 0.40601343
-        inSlope: 0
-        outSlope: 0
+        time: 1
+        value: 0.40277863
+        inSlope: -2.0701506
+        outSlope: -2.0701506
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.11984543
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 1, b: 0.9784224, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 0.5889277, b: 0.03459108, a: 0.627451}
+      key2: {r: 1, g: 0.5889277, b: 0.03459108, a: 0}
+      key3: {r: 0.08627451, g: 0.19215688, b: 0.41960788, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
+      ctime0: 21010
+      ctime1: 40092
+      ctime2: 65535
+      ctime3: 65535
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
+      atime1: 46838
+      atime2: 63993
+      atime3: 65535
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
       m_Mode: 0
       m_ColorSpace: 0
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
+      m_NumColorKeys: 3
+      m_NumAlphaKeys: 3
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 3
+    textureMode: 1
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
@@ -30159,7 +30167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_moveObject: {fileID: 1365478038306601327}
   m_shaderPropertyName: _MoveToMaterialUV
-  m_shaderPropertyID: 1613
+  m_shaderPropertyID: 1606
   m_materialData:
   - m_trailRenderer: {fileID: 0}
     m_uvTiling: {x: 1, y: 1}
