@@ -74,7 +74,7 @@ public class RoofGenerator : MonoBehaviour
                 go.gameObject.name = $"FallObject_{i}_{j}";
                 
                 _fallingObjects.Add(fallingObject);
-                fallingObject.FallSpeed += ((fallSpeed * i)) +((fallSpeed * j) / interval) ;
+                fallingObject.FallSpeed = fallSpeed +(((fallSpeed * i)) +((fallSpeed * j) / interval)) ;
                 //Debug.Log( $"{fallingObject.name} :: {fallingObject.FallSpeed}");
 
             }
