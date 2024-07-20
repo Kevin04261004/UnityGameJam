@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4dcc2fe59dc14c247ab529c5356f67f5
+guid: 87cdb9bf3ba60d94bbab32437d4b4bad
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4201254454841321456
-    second: cave_nomal_02_0
+      213: 5357477920668418326
+    second: main_setting_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cave_nomal_02_0
+      name: main_setting_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 1200
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0f728dfdaaadd4a30800000000000000
-      internalID: 4201254454841321456
+      spriteID: 6118071a8c5995a40800000000000000
+      internalID: 5357477920668418326
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      cave_nomal_02_0: 4201254454841321456
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
