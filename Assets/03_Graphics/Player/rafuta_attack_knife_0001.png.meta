@@ -103,12 +103,12 @@ TextureImporter:
       name: rafuta_attack_knife_0001_0
       rect:
         serializedVersion: 2
-        x: 12
+        x: 0
         y: 0
-        width: 87
-        height: 117
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -117,6 +117,50 @@ TextureImporter:
       bones: []
       spriteID: f354eb58984541520800000000000000
       internalID: 2671853428568638783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rafuta_attack_knife_0001_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca4e5bccf585d3a42bba1d3c723fb688
+      internalID: 825911958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rafuta_attack_knife_0001_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95d1e7277049e541abeed1f07f767d3
+      internalID: -350084389
       vertices: []
       indices: 
       edges: []
@@ -136,6 +180,8 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       rafuta_attack_knife_0001_0: 2671853428568638783
+      rafuta_attack_knife_0001_1: 825911958
+      rafuta_attack_knife_0001_2: -350084389
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
