@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      stand_01_redring_0: 1463699058719221467
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
