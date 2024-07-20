@@ -32575,6 +32575,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 3212539227773448864, guid: 2f217ab54b8942c4e878140072254301, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3304289931749002107, guid: 6d3ea39190df8214892fc6965a9de6a5, type: 3}
+    - target: {fileID: 3212539227773448864, guid: 2f217ab54b8942c4e878140072254301, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5236622626694653069, guid: 2f217ab54b8942c4e878140072254301, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -32589,7 +32597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5236622626694653069, guid: 2f217ab54b8942c4e878140072254301, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.75
+      value: -3.72
       objectReference: {fileID: 0}
     - target: {fileID: 5236622626694653069, guid: 2f217ab54b8942c4e878140072254301, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32623,6 +32631,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8883998059269784657, guid: 2f217ab54b8942c4e878140072254301, type: 3}
+      propertyPath: _sprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883998059269784657, guid: 2f217ab54b8942c4e878140072254301, type: 3}
+      propertyPath: '_sprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: -3304289931749002107, guid: 6d3ea39190df8214892fc6965a9de6a5, type: 3}
+    - target: {fileID: 8883998059269784657, guid: 2f217ab54b8942c4e878140072254301, type: 3}
+      propertyPath: '_sprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: -1022152205726366628, guid: 4e80a816f01f059469d44e829ba99100, type: 3}
+    - target: {fileID: 8883998059269784657, guid: 2f217ab54b8942c4e878140072254301, type: 3}
+      propertyPath: '_sprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: -663806210318292, guid: 83710d902fa52874dac882c499d2584e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
