@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
 public class PlayerStats : MonoBehaviour , IDamageable
@@ -13,12 +14,14 @@ public class PlayerStats : MonoBehaviour , IDamageable
     
     [Header("Current Stats")]
     [SerializeField] protected int hp;
+
+    [SerializeField] public float attackAfterDelay = 0.2f;
     public virtual int Hp
     {
         get => hp;
         private set
         {
-            if (hp - value <= 0)
+            if (value <= 0)
             {
                 Die();
                 hp = 0;
@@ -53,13 +56,12 @@ public class PlayerStats : MonoBehaviour , IDamageable
 
     [field: SerializeField] public bool canAttack { get;  set; }
 
+    [SerializeField] protected TrailRenderer _trailRenderer;
+    
     #endregion
 
-    #region Unity Event Functions
-    private void Awake()
-    {
-        Hp = initHp;
-    }
+    #region Unity Event Functions    
+    
 
     private void FixedUpdate()
     {
@@ -77,6 +79,11 @@ public class PlayerStats : MonoBehaviour , IDamageable
     private void Die()
     {
         //Todo : add game over Function
+        GameManager.Instance.SetActiveGameOverUI(true);
+        if (this.TryGetComponent<RunNActionPlayer>(out RunNActionPlayer player))
+        {
+            player.canMove = false;
+        }
         
     }
     
@@ -87,6 +94,7 @@ public class PlayerStats : MonoBehaviour , IDamageable
         }
 
         acclerateTimer = accelTime;
+        _trailRenderer.enabled = true;
 
     }
     private void UpdateTimer()
@@ -94,7 +102,11 @@ public class PlayerStats : MonoBehaviour , IDamageable
         if (acclerateTimer >= 0)
             acclerateTimer -= Time.fixedDeltaTime;
         else
+        {
+            _trailRenderer.enabled = false; 
             ChangedSpeed = 0;
+        }
+            
 
         if (attackTimer >= 0)
             attackTimer -= Time.fixedDeltaTime;
@@ -102,7 +114,12 @@ public class PlayerStats : MonoBehaviour , IDamageable
             canAttack = true;
 
 
-    } 
+    }
+
+    public void InitStats()
+    {
+        Hp = initHp;
+    }
     
     #endregion 
     

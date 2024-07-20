@@ -1,13 +1,20 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Collider2D))]
 public class Obstacle : Abstract_Enemy
 {
-    
+    [SerializeField] private List<Sprite> _sprites; 
     private void Awake()
     {
-        this.GetComponent<Collider2D>().isTrigger = true;
+        if (_sprites.Count > 0)
+        {
+            GetComponent<SpriteRenderer>().sprite = _sprites[Random.Range(0, _sprites.Count)];
+        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)

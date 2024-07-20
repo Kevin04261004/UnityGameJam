@@ -6,12 +6,17 @@ using Random = UnityEngine.Random;
 public class BackGroundGenerater : MonoBehaviour
 {
     [SerializeField] private int bgCount = 10;
+    
+    [Header("Offset and Intervalse")]
     [SerializeField] private float yOffset = 0;
     [SerializeField] private float xInterval = 2f;
+    [SerializeField] private float LastXInterval = 4.1f;
     
+    [Header("Prefabs")]
     [SerializeField] private GameObject prefab;
     [SerializeField] private GameObject lastBG;
     
+    [Header("Sprites")]
     [SerializeField] private List<Sprite> Base;
     [SerializeField] private List<Sprite> Back;
     [SerializeField] private List<Sprite> Middle;
@@ -27,7 +32,7 @@ public class BackGroundGenerater : MonoBehaviour
             go.transform.localPosition = new Vector2(xInterval * i, yOffset);
             go.name = $"BG_{i}";
         }
-        Instantiate(lastBG,this.transform).transform.position = new Vector2((bgCount -1 ) * xInterval + (2.2f * lastBG.transform.localScale.x), yOffset);
+        Instantiate(lastBG,this.transform).transform.localPosition = new Vector2((bgCount -1 ) * xInterval + (LastXInterval * lastBG.transform.localScale.x), yOffset);
 
     }
 
@@ -62,7 +67,13 @@ public class BackGroundGenerater : MonoBehaviour
         return go;
 
     }
-    
-    
-    
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color =Color.red;
+        Vector2 center = new Vector2( (xInterval * bgCount) + transform.position.x,transform.position.y);
+        Gizmos.DrawWireCube( center,new Vector3((xInterval *2 * bgCount),10));
+        
+    }
 }

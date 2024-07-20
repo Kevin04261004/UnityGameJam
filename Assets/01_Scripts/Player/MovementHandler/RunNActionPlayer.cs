@@ -10,9 +10,11 @@ public class RunNActionPlayer : BasePlayer
     
     //[field: SerializeField] public RunNActionCollisionDetector _RunNActionCollisionDetectordetector { get; protected set; }
     //[field: SerializeField] public CapsuleCollisionDetector _detector { get; protected set; }
-    
-    
 
+    [field: SerializeField] public bool canMove { get; set; } = false;
+    
+    
+    
     private void Start()
     {
         if (playerStats == null)
@@ -25,6 +27,9 @@ public class RunNActionPlayer : BasePlayer
 
     public override void HandleMovement()
     {
+        if (!canMove)
+            return;
+        
         base.HandleMovement();
         
         if (_inputHandler.JumpKeyDown && _detector.Grounded)
@@ -37,10 +42,13 @@ public class RunNActionPlayer : BasePlayer
         if (_inputHandler.leftMouseButtonDown && playerStats.canAttack && _detector.Grounded)
         {
             // TODO -> 공격 및 애니메이션 추가
+            canMove = false;
+            Invoke("ActiveMove",playerStats.attackAfterDelay);
             _animator.SetTrigger(EAnimationKeys.Attack.ToString());
             playerStats.canAttack = false;
             if ( (_detector as RunNActionCollisionDetector).CurDamageableObject != null)
                 (_detector as RunNActionCollisionDetector).CurDamageableObject.TakeDamage(_runMovementDataSO.DamagePower);
+            
             
         }
         
@@ -49,8 +57,16 @@ public class RunNActionPlayer : BasePlayer
         
     }
 
+    private void ActiveMove()
+    {
+        canMove = true;
+    }
+    
     public override void HandlePhysics()
     {
+        if (!canMove)
+            return;
+        
         base.HandlePhysics();
         (_detector as RunNActionCollisionDetector).CheckDamageableObject();
 
@@ -73,6 +89,12 @@ public class RunNActionPlayer : BasePlayer
 
         
     }
-    
+
+    public override void Activate()
+    {
+        base.Activate();
+        playerStats.InitStats();
+        canMove = true;
+    }
     
 }

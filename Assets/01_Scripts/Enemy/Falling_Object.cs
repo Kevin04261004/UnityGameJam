@@ -1,12 +1,17 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class Falling_Object : MonoBehaviour
 {
     [SerializeField] private float fallSpeed;
     private float currentSpeed = 0;
 
+    [field: SerializeField] public bool isSounding { get; set; }
+    
+    
     public float FallSpeed
     {
         get => fallSpeed;
@@ -44,11 +49,10 @@ public class Falling_Object : MonoBehaviour
     {
         if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
         {
-            _isFall = false;
             Destroy(this);
         }
 
-        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Player")))
+        if (other.gameObject.TryGetComponent<PlayerStats>(out PlayerStats player))
         {
             Vector2 dirVec =  other.transform.position - this.transform.position;
             dirVec.Normalize();
@@ -57,7 +61,7 @@ public class Falling_Object : MonoBehaviour
             if (dot >= 0)
             {
                 //Debug.Log("GameOver!");
-                GameManager.Instance.SetActiveGameOverUI(true);
+                player.TakeDamage(100);
             }
             
         }

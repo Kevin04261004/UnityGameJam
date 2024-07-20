@@ -13,6 +13,8 @@ public class RoofGenerator : MonoBehaviour
     [SerializeField] private List<Transform> points; // Vector2 , 그래프 편집 툴 전환 필요
     private List<Falling_Object> _fallingObjects;
 
+    //[SerializeField] private int soundInterval = 3;
+    
     [Range(0.1f,5.0f)]
     [SerializeField] private float fallDelay;
 
@@ -20,6 +22,7 @@ public class RoofGenerator : MonoBehaviour
     [Range(0f, 100f)] [SerializeField] private float fallSpeed;
 
     [SerializeField]private bool fallInAwake = false;
+    [SerializeField] private float intervalValue = 1;
     
     private void Awake()
     {
@@ -55,7 +58,7 @@ public class RoofGenerator : MonoBehaviour
 
         for (int i = 0; i < points.Count - 1; i++)
         {
-            int interval = (int)((points[i + 1].position.x - points[i].position.x) /1);
+            int interval = (int)((points[i + 1].position.x - points[i].position.x) / intervalValue);
             
             float yInterval =  (points[i + 1].position.y - points[i].position.y) / interval;
             float xInterval = (points[i + 1].position.x - points[i].position.x) / interval;
@@ -64,6 +67,7 @@ public class RoofGenerator : MonoBehaviour
             {
                 Falling_Object fallingObject = Instantiate(fallingObjectPrefab, transform, true);
                 GameObject go = fallingObject.gameObject;
+                go.SetActive(false);
                 int rand = Random.Range(0, roofSprites.Count);
                 go.GetComponent<SpriteRenderer>().sprite = roofSprites[rand];
                 //go.GetComponent<SpriteRenderer>().color = rand == 0 ? Color.white : Color.red;
@@ -73,9 +77,11 @@ public class RoofGenerator : MonoBehaviour
                 go.transform.position = points[i].position +  new Vector3(xPos, yPos);
                 go.gameObject.name = $"FallObject_{i}_{j}";
                 
+                
                 _fallingObjects.Add(fallingObject);
-                fallingObject.FallSpeed += ((fallSpeed * i)) +((fallSpeed * j) / interval) ;
+                fallingObject.FallSpeed = fallSpeed +(((fallSpeed * i)) +((fallSpeed * j) / interval)) ;
                 //Debug.Log( $"{fallingObject.name} :: {fallingObject.FallSpeed}");
+                
 
             }
             
@@ -99,6 +105,7 @@ public class RoofGenerator : MonoBehaviour
         foreach (var obj in _fallingObjects)
         {
             obj.IsFall = true; 
+            obj.gameObject.SetActive(true);
             yield return fallingDelay;    
         }
         

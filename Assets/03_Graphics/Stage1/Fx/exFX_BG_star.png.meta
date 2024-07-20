@@ -1,0 +1,392 @@
+fileFormatVersion: 2
+guid: 3ab7cf8b5893d19489a5c1b32f1403fa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9039395935832089931
+    second: exFX_BG_star_0
+  - first:
+      213: 3762039015313373810
+    second: exFX_BG_star_1
+  - first:
+      213: 4640799652682165773
+    second: exFX_BG_star_2
+  - first:
+      213: 2937395175858629601
+    second: exFX_BG_star_3
+  - first:
+      213: -8521128797680974871
+    second: exFX_BG_star_4
+  - first:
+      213: -2368260379373256422
+    second: exFX_BG_star_5
+  - first:
+      213: 826357552576618705
+    second: exFX_BG_star_6
+  - first:
+      213: -7753293129527439360
+    second: exFX_BG_star_7
+  - first:
+      213: -1585992425504203547
+    second: exFX_BG_star_8
+  - first:
+      213: -2486659647629084107
+    second: exFX_BG_star_9
+  - first:
+      213: -5731790372707452564
+    second: exFX_BG_star_10
+  - first:
+      213: 7148472700196380936
+    second: exFX_BG_star_11
+  - first:
+      213: -7406908305147485016
+    second: exFX_BG_star_12
+  - first:
+      213: 8574272364719677384
+    second: exFX_BG_star_13
+  - first:
+      213: -7076644810917274569
+    second: exFX_BG_star_14
+  - first:
+      213: -1197102066246437465
+    second: exFX_BG_star_15
+  - first:
+      213: -2470175533553531547
+    second: exFX_BG_star_16
+  - first:
+      213: 1657895325764428456
+    second: exFX_BG_star_17
+  - first:
+      213: 6222979374089945506
+    second: exFX_BG_star_18
+  - first:
+      213: 7363347893563042792
+    second: exFX_BG_star_19
+  - first:
+      213: 7498362603279641012
+    second: exFX_BG_star_20
+  - first:
+      213: -2243337604577665959
+    second: exFX_BG_star_21
+  - first:
+      213: 3642963657407631306
+    second: exFX_BG_star_22
+  - first:
+      213: 3304328508742028045
+    second: exFX_BG_star_23
+  - first:
+      213: -476069303474175093
+    second: exFX_BG_star_24
+  - first:
+      213: -7439974963453969954
+    second: exFX_BG_star_25
+  - first:
+      213: -5619510082318024446
+    second: exFX_BG_star_26
+  - first:
+      213: 3766833726096046985
+    second: exFX_BG_star_27
+  - first:
+      213: -4420795435252648850
+    second: exFX_BG_star_28
+  - first:
+      213: -1394453674092923445
+    second: exFX_BG_star_29
+  - first:
+      213: -4609187664941088992
+    second: exFX_BG_star_30
+  - first:
+      213: 7998320374671795358
+    second: exFX_BG_star_31
+  - first:
+      213: -2372385333367448761
+    second: exFX_BG_star_32
+  - first:
+      213: 5676736811648524483
+    second: exFX_BG_star_33
+  - first:
+      213: -1054719101731771223
+    second: exFX_BG_star_34
+  - first:
+      213: 5693612079841517614
+    second: exFX_BG_star_35
+  - first:
+      213: -4311356147492692961
+    second: exFX_BG_star_36
+  - first:
+      213: 7641076532551714125
+    second: exFX_BG_star_37
+  - first:
+      213: 1109509141624758793
+    second: exFX_BG_star_38
+  - first:
+      213: 458838156770051544
+    second: exFX_BG_star_39
+  - first:
+      213: -6471070862434037790
+    second: exFX_BG_star_40
+  - first:
+      213: -1356703809621829448
+    second: exFX_BG_star_41
+  - first:
+      213: 4739012106535357218
+    second: exFX_BG_star_42
+  - first:
+      213: 8240608134030398629
+    second: exFX_BG_star_43
+  - first:
+      213: -7225387174326877288
+    second: exFX_BG_star_44
+  - first:
+      213: 4595940146127376158
+    second: exFX_BG_star_45
+  - first:
+      213: -4948282128288620287
+    second: exFX_BG_star_46
+  - first:
+      213: -4840966938383774798
+    second: exFX_BG_star_47
+  - first:
+      213: 1612879360915026160
+    second: exFX_BG_star_48
+  - first:
+      213: 764679469262048901
+    second: exFX_BG_star_49
+  - first:
+      213: -8013714854888477447
+    second: exFX_BG_star_50
+  - first:
+      213: -4265676466754958945
+    second: exFX_BG_star_51
+  - first:
+      213: 6014609247934856642
+    second: exFX_BG_star_52
+  - first:
+      213: -7846510668866189813
+    second: exFX_BG_star_53
+  - first:
+      213: -7837744628887204474
+    second: exFX_BG_star_54
+  - first:
+      213: 8959258304658702982
+    second: exFX_BG_star_55
+  - first:
+      213: 8776820525177875748
+    second: exFX_BG_star_56
+  - first:
+      213: 5536242309908813581
+    second: exFX_BG_star_57
+  - first:
+      213: -782583167990186981
+    second: exFX_BG_star_58
+  - first:
+      213: 6041986885847879090
+    second: exFX_BG_star_59
+  - first:
+      213: 116833461726409380
+    second: exFX_BG_star_60
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: exFX_BG_star_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b45a16bf5b2627d70800000000000000
+      internalID: 9039395935832089931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exFX_BG_star_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27af9e26d82753430800000000000000
+      internalID: 3762039015313373810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exFX_BG_star_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0e60e332be676040800000000000000
+      internalID: 4640799652682165773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exFX_BG_star_3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ebeff57959b3c820800000000000000
+      internalID: 2937395175858629601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      exFX_BG_star_0: 9039395935832089931
+      exFX_BG_star_1: 3762039015313373810
+      exFX_BG_star_2: 4640799652682165773
+      exFX_BG_star_3: 2937395175858629601
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

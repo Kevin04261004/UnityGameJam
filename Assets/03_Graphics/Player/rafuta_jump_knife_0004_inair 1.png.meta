@@ -103,10 +103,10 @@ TextureImporter:
       name: rafuta_jump_knife_0004_inair 1_0
       rect:
         serializedVersion: 2
-        x: 18
+        x: 0
         y: 0
-        width: 80
-        height: 125
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
