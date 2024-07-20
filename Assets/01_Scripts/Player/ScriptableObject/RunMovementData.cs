@@ -11,7 +11,7 @@ public class RunMovementData : ScriptableObject
     [field: SerializeField] public float JumpStrength { get; set; }
     
     [Header("Action")]
-    [field:SerializeField] public float DamagePower { get; set; }
+    [field:SerializeField] public int DamagePower { get; set; }
     
     
 }

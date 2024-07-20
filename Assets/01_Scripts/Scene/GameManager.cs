@@ -4,6 +4,9 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _settingPanel;
     public static GameManager Instance { get; private set; }
+
+    [SerializeField] private GameObject gameOverUI; 
+    
     public enum EGameType
     {
         Start,
@@ -28,6 +31,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetActiveGameOverUI(bool condition)
+    {
+        gameOverUI.SetActive(condition);
+    }
+    
     public void ExitGame()
     {
         Application.Quit();

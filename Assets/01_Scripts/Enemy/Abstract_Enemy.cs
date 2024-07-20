@@ -10,7 +10,7 @@ public abstract class Abstract_Enemy : MonoBehaviour, IDamageable
     public virtual int HP
     {
         get => hp;
-        private set
+        protected set
         {
             if (hp - value <= 0)
             {

@@ -36,7 +36,7 @@ public class Obstacle : Abstract_Enemy
 
     public override void TakeDamage(int _damage)
     {
-        return;
+        HP -= _damage;
     }
     
 }

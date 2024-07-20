@@ -29,7 +29,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -44,6 +44,9 @@ TagManager:
   m_SortingLayers:
   - name: BG
     uniqueID: 25305655
+    locked: 0
+  - name: BG_Forward
+    uniqueID: 948372469
     locked: 0
   - name: Default
     uniqueID: 0

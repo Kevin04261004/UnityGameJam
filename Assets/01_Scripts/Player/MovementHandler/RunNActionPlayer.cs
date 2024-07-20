@@ -2,11 +2,14 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class RunNActionMovementHandler : BasePlayer
+public class RunNActionPlayer : BasePlayer
 {
     [SerializeField] private RunMovementData _runMovementDataSO;
     [SerializeField] private PlayerStats playerStats;
-    [field: SerializeField] private bool canAttack { get; set; }
+    //[field: SerializeField] private bool canAttack { get; set; }
+    
+    //[field: SerializeField] public RunNActionCollisionDetector _RunNActionCollisionDetectordetector { get; protected set; }
+    //[field: SerializeField] public CapsuleCollisionDetector _detector { get; protected set; }
     
     
 
@@ -17,7 +20,7 @@ public class RunNActionMovementHandler : BasePlayer
             TryGetComponent<PlayerStats>(out playerStats);
         }
         Debug.Assert(playerStats != null, "playerStats != null");
-        
+
     }
 
     public override void HandleMovement()
@@ -31,19 +34,25 @@ public class RunNActionMovementHandler : BasePlayer
         }
         
         /* Attack */
-        if (_inputHandler.leftMouseButtonDown && canAttack && _detector.Grounded)
+        if (_inputHandler.leftMouseButtonDown && playerStats.canAttack && _detector.Grounded)
         {
             // TODO -> 공격 및 애니메이션 추가
+            _animator.SetTrigger(EAnimationKeys.Attack.ToString());
+            playerStats.canAttack = false;
+            if ( (_detector as RunNActionCollisionDetector).CurDamageableObject != null)
+                (_detector as RunNActionCollisionDetector).CurDamageableObject.TakeDamage(_runMovementDataSO.DamagePower);
             
         }
         
         /* animator Update */
         _animator.SetBool(EAnimationKeys.Grounded.ToString(), _detector.Grounded);
+        
     }
 
     public override void HandlePhysics()
     {
         base.HandlePhysics();
+        (_detector as RunNActionCollisionDetector).CheckDamageableObject();
 
         float speed = (_inputHandler.SprintKeyPress
             ? _runMovementDataSO.SprintSpeed
@@ -61,6 +70,9 @@ public class RunNActionMovementHandler : BasePlayer
         //Debug.Log($"Speed : {speed}" );
         _movement.Move(_inputHandler.MoveDir, speed);
         _animator.SetFloat(EAnimationKeys.Speed.ToString(), speed);
+
+        
     }
+    
     
 }

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <SprintSpeed>k__BackingField: 8
   <WalkSpeed>k__BackingField: 4
-  <JumpStrength>k__BackingField: 7
+  <JumpStrength>k__BackingField: 8
   <DamagePower>k__BackingField: 2

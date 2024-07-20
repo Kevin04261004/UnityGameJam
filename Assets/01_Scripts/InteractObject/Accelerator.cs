@@ -1,17 +1,12 @@
 using System;
 using UnityEngine;
 
-public class Accelator : MonoBehaviour, IInteractableObject
+public class Accelator : MonoBehaviour
 {
     [Range(0.1f,30f)]
     [SerializeField] private float accelarSpeed = 1f;
+    [SerializeField] private float accelarTime = 1f;
     private PlayerStats player;
-    
-    public void Interact()
-    {
-        player.ChangedSpeed += accelarSpeed;
-        this.gameObject.SetActive(false);
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,8 +18,9 @@ public class Accelator : MonoBehaviour, IInteractableObject
 
         if (other.TryGetComponent<PlayerStats>(out player))
         {
-            //Debug.Log($"player Speed : {player.ChangedSpeed} , After : {player.ChangedSpeed + this.accelarSpeed}");
-            Interact();    
+            player.Acclerate(accelarSpeed,accelarTime);
+            this.gameObject.SetActive(false);  
         }
+        
     }
 }

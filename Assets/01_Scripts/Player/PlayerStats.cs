@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -8,7 +9,7 @@ public class PlayerStats : MonoBehaviour , IDamageable
     #region Members 
     [Header("Init Stats")] [SerializeField]
     protected int initHp;
-       
+    [SerializeField] protected float attackCooldown = 0.2f;
     
     [Header("Current Stats")]
     [SerializeField] protected int hp;
@@ -47,12 +48,22 @@ public class PlayerStats : MonoBehaviour , IDamageable
         set => changedSpeed = value;
     }
     
+    private float acclerateTimer;
+    private float attackTimer;
+
+    [field: SerializeField] public bool canAttack { get;  set; }
+
     #endregion
 
     #region Unity Event Functions
     private void Awake()
     {
         Hp = initHp;
+    }
+
+    private void FixedUpdate()
+    {
+        UpdateTimer();
     }
 
     #endregion
@@ -68,6 +79,30 @@ public class PlayerStats : MonoBehaviour , IDamageable
         //Todo : add game over Function
         
     }
+    
+    public void Acclerate(float speed ,float  accelTime){
+        if (ChangedSpeed < speed)
+        {
+            ChangedSpeed = speed;
+        }
+
+        acclerateTimer = accelTime;
+
+    }
+    private void UpdateTimer()
+    {
+        if (acclerateTimer >= 0)
+            acclerateTimer -= Time.fixedDeltaTime;
+        else
+            ChangedSpeed = 0;
+
+        if (attackTimer >= 0)
+            attackTimer -= Time.fixedDeltaTime;
+        else
+            canAttack = true;
+
+
+    } 
     
     #endregion 
     

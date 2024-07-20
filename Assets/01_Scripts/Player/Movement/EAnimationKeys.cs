@@ -3,5 +3,6 @@
     Speed,
     Jump,
     Grounded,
+    Attack,
     
 }

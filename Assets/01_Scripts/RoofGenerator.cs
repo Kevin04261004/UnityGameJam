@@ -51,11 +51,11 @@ public class RoofGenerator : MonoBehaviour
     {
         //AnimationCurve
 
-        float width =  fallingObjectPrefab.transform.localScale.x;
+        //float width =  fallingObjectPrefab.transform.localScale.x;
 
         for (int i = 0; i < points.Count - 1; i++)
         {
-            int interval = (int)((points[i + 1].position.x - points[i].position.x) / width);
+            int interval = (int)((points[i + 1].position.x - points[i].position.x) /1);
             
             float yInterval =  (points[i + 1].position.y - points[i].position.y) / interval;
             float xInterval = (points[i + 1].position.x - points[i].position.x) / interval;
@@ -64,9 +64,9 @@ public class RoofGenerator : MonoBehaviour
             {
                 Falling_Object fallingObject = Instantiate(fallingObjectPrefab, transform, true);
                 GameObject go = fallingObject.gameObject;
-                int rand = Random.Range(0, 2);
+                int rand = Random.Range(0, roofSprites.Count);
                 go.GetComponent<SpriteRenderer>().sprite = roofSprites[rand];
-                go.GetComponent<SpriteRenderer>().color = rand == 0 ? Color.white : Color.red;
+                //go.GetComponent<SpriteRenderer>().color = rand == 0 ? Color.white : Color.red;
                 
                 float xPos = xInterval *  j;
                 float yPos = (yInterval *  j) + (Random.Range(-variableRange,variableRange) / 100f);
