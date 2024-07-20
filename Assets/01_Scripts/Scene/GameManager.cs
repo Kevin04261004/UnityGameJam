@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _settingPanel;
+    [field:SerializeField] public Volume GlobalVolume { get; set; }
     public static GameManager Instance { get; private set; }
 
     [SerializeField] private GameObject gameOverUI; 

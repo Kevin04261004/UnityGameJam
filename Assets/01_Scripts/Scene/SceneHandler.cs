@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -287,6 +288,11 @@ public class SceneHandler : MonoBehaviour
             else if (scene.name == Stage4)
             {
                 playerHandler.CurType = PlayerHandler.EMovementType.Lamp;
+            }
+            /* global Volume */
+            if (GameManager.Instance.GlobalVolume.profile.TryGet(out ColorLookup lookUp))
+            {
+                lookUp.contribution.value = (scene.name == Stage4 ? 1f : 0f);
             }
         }
         else
