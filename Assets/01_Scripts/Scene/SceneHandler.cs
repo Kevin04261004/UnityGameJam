@@ -363,4 +363,23 @@ public class SceneHandler : MonoBehaviour
 
         fadeImage.raycastTarget = false;
     }
+
+    public void ReloadScene(string sceneName)
+    {
+        if (IsSceneLoaded(sceneName))
+        {
+            StartCoroutine(ReloadSceneRoutine(sceneName,LoadSceneMode.Additive));
+        } 
+        
+    }
+
+    private IEnumerator ReloadSceneRoutine(string sceneName, LoadSceneMode mode)
+    {
+        yield return StartCoroutine(FadeOut());
+        SceneManager.UnloadSceneAsync(sceneName);
+        yield return StartCoroutine(LoadSceneFadeRoutine(sceneName, mode));
+        //yield return StartCoroutine(FadeIn());        
+
+    }
+    
 }

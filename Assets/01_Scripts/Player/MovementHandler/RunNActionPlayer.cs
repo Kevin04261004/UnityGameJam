@@ -10,9 +10,11 @@ public class RunNActionPlayer : BasePlayer
     
     //[field: SerializeField] public RunNActionCollisionDetector _RunNActionCollisionDetectordetector { get; protected set; }
     //[field: SerializeField] public CapsuleCollisionDetector _detector { get; protected set; }
-    
-    
 
+    [field: SerializeField] public bool isGameOver { get; set; } = false;
+
+    
+    
     private void Start()
     {
         if (playerStats == null)
@@ -25,6 +27,9 @@ public class RunNActionPlayer : BasePlayer
 
     public override void HandleMovement()
     {
+        if (isGameOver)
+            return;
+        
         base.HandleMovement();
         
         if (_inputHandler.JumpKeyDown && _detector.Grounded)
@@ -51,6 +56,9 @@ public class RunNActionPlayer : BasePlayer
 
     public override void HandlePhysics()
     {
+        if (isGameOver)
+            return;
+        
         base.HandlePhysics();
         (_detector as RunNActionCollisionDetector).CheckDamageableObject();
 
@@ -73,6 +81,12 @@ public class RunNActionPlayer : BasePlayer
 
         
     }
-    
+
+    public override void Activate()
+    {
+        base.Activate();
+        playerStats.InitStats();
+        isGameOver = false;
+    }
     
 }

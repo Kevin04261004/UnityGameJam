@@ -51,6 +51,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Cam
+    uniqueID: 800811705
+    locked: 0
   m_RenderingLayers:
   - Default
   - Pillar

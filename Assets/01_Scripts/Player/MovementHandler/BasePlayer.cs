@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class BasePlayer : MonoBehaviour
@@ -22,7 +23,7 @@ public abstract class BasePlayer : MonoBehaviour
 
     }
 
-    public void Activate()
+    public virtual void Activate()
     {
         _movement.enabled = true;
         _detector.enabled = true;
@@ -30,7 +31,7 @@ public abstract class BasePlayer : MonoBehaviour
         _meshGO.SetActive(true);
     }
 
-    public void Deactivate()
+    public virtual void Deactivate()
     {
         _movement.enabled = false;
         _detector.enabled = false;
@@ -54,4 +55,6 @@ public abstract class BasePlayer : MonoBehaviour
         _detector.CheckWall();
         _detector.CheckInteractObject();
     }
+    
+    
 }

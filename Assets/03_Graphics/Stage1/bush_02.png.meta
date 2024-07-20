@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d24702d2025d1824ca5bdc21f8a81dee
+guid: c06258748735af549ad08223e1df9001
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5428706284191908264
-    second: stage3_BG_04_0
+      213: -1808480516193453328
+    second: bush_02_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stage3_BG_04_0
+      name: bush_02_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 960
-        height: 540
+        width: 47
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8a1803b5a93a65b40800000000000000
-      internalID: 5428706284191908264
+      spriteID: 0faf2116d8cf6e6e0800000000000000
+      internalID: -1808480516193453328
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      stage3_BG_04_0: 5428706284191908264
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

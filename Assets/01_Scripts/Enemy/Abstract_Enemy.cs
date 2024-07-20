@@ -12,7 +12,7 @@ public abstract class Abstract_Enemy : MonoBehaviour, IDamageable
         get => hp;
         protected set
         {
-            if (hp - value <= 0)
+            if (value <= 0)
             {
                 Die();
                 hp = 0;
