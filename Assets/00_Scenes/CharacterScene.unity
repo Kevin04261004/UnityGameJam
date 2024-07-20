@@ -10022,7 +10022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_moveObject: {fileID: 692347755}
   m_shaderPropertyName: _MoveToMaterialUV
-  m_shaderPropertyID: 1613
+  m_shaderPropertyID: 1585
   m_materialData:
   - m_trailRenderer: {fileID: 692347756}
     m_uvTiling: {x: 1, y: 1}
@@ -29981,6 +29981,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5134208841348520416, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153381717936869332, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
+      propertyPath: curType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9118282633075658132, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
