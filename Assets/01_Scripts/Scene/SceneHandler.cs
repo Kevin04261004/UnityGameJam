@@ -19,6 +19,7 @@ public class SceneHandler : MonoBehaviour
     public static readonly string Stage3 = "Stage3";
     public static readonly string Stage4 = "Stage4";
     public static readonly string EndScene = "EndScene";
+    public AudioListener audioListener;
     public Dictionary<string, LoadSceneMode> loadScenes = new Dictionary<string, LoadSceneMode>();
     // public delegate void SceneLoadedEvent();
     // public Dictionary<string, SceneLoadedEvent> sceneLoadedEvents = new Dictionary<string, SceneLoadedEvent>();
@@ -106,6 +107,10 @@ public class SceneHandler : MonoBehaviour
         OnSceneLoaded(new Scene(), LoadSceneMode.Additive);
         if (SceneManager.sceneCount != 1)
         {
+            if (IsSceneLoaded(CharacterScene))
+            {
+                audioListener.enabled = false;
+            }
             return;
         }
         LoadSceneWithFade(TitleScene);
@@ -261,6 +266,8 @@ public class SceneHandler : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        audioListener.enabled = (!IsSceneLoaded(CharacterScene));
+
         if (TryGetObjectFromScene(CharacterScene, out PlayerHandler playerHandler))
         {
             /* spawnPoint */

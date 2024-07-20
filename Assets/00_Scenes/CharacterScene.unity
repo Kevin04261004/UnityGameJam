@@ -10022,11 +10022,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_moveObject: {fileID: 692347755}
   m_shaderPropertyName: _MoveToMaterialUV
-  m_shaderPropertyID: 1606
+  m_shaderPropertyID: 1587
   m_materialData:
   - m_trailRenderer: {fileID: 692347756}
     m_uvTiling: {x: 1, y: 1}
     m_move: 0
+--- !u!1 &698463732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 844772400703797824, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
+  m_PrefabInstance: {fileID: 1365478038306601324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!81 &698463751
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698463732}
+  m_Enabled: 1
 --- !u!1 &1159595359
 GameObject:
   m_ObjectHideFlags: 0
@@ -29993,7 +30006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7153381717936869332, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       propertyPath: curType
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7900669539384157208, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       propertyPath: m_Material
@@ -30011,6 +30024,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 844772400703797824, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 698463751}
     - targetCorrespondingSourceObject: {fileID: 3496221733542906328, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1365478038306601326}

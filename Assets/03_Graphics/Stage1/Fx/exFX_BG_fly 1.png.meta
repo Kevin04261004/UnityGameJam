@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      exFX_BG_fly 1_0: 6175609922527962442
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
