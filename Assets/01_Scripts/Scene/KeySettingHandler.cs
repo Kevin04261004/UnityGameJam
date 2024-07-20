@@ -47,14 +47,16 @@ public class KeySettingHandler : MonoBehaviour
     {
         if (pressedKeyType != EKeyType.Size)
         {
-            keyDictionary[(EKeyType)keyType].color = Color.black;
+            keyDictionary[pressedKeyType].color = Color.black;
         }
-        pressedKeyType = (EKeyType)keyType;
-    }
 
-    public void SetTMPColorRed(TextMeshProUGUI tmp)
-    {
-        tmp.color = Color.red;
+        if (pressedKeyType == (EKeyType)keyType)
+        {
+            pressedKeyType = EKeyType.Size;
+            return;
+        }
+        keyDictionary[(EKeyType)keyType].color = Color.red;
+        pressedKeyType = (EKeyType)keyType;
     }
 
     private string GetKeyCodeString(KeyCode keycode)
