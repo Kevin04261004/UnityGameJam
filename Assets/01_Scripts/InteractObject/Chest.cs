@@ -60,4 +60,28 @@ public class Chest : MonoBehaviour, IInteractableObject
         yield return new WaitForSeconds(2f);
         SceneHandler.Instance.LoadSceneWithFade(SceneHandler.EndScene);
     }
+
+    public void LUTSet()
+    {
+        StartCoroutine(TestRoutine());
+    }
+
+    private IEnumerator TestRoutine()
+    {
+        if (GameManager.Instance.GlobalVolume.profile.TryGet<ColorLookup>(out ColorLookup lookUp))
+        {
+            float duration = 1f;
+            float elapsedTime = 0.0f;
+
+            while (elapsedTime < duration)
+            {
+                elapsedTime += Time.deltaTime;
+                lookUp.contribution.value = Mathf.Lerp(1f, 0f, elapsedTime / duration);
+                yield return null;
+            }
+
+            // Ensure the final value is set
+            lookUp.contribution.value = 0f;
+        }
+    }
 }
