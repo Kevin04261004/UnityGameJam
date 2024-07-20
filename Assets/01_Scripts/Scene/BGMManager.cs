@@ -4,7 +4,7 @@ using UnityEngine;
 public class BGMManager : MonoBehaviour
 {
     public static BGMManager Instance;
-    [SerializeField] private AudioSource _audioSource;
+    [field: SerializeField] public AudioSource _audioSource { get; set; }
 
     public void Awake()
     {
@@ -20,14 +20,13 @@ public class BGMManager : MonoBehaviour
 
     public void PlayBGM(AudioClip clip)
     {
+        if (_audioSource.clip != null && _audioSource.clip == clip)
+        {
+            return;
+        }
         if (_audioSource.isPlaying)
         {
             _audioSource.Stop();
-        }
-
-        if (_audioSource.clip == clip)
-        {
-            return;
         }
         _audioSource.clip = clip;
         _audioSource.Play();

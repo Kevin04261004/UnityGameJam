@@ -52,6 +52,7 @@ public class SceneHandler : MonoBehaviour
     {
         if (IsSceneLoaded(_stageDataSO.curStage))
         {
+            SceneManager.UnloadSceneAsync(_stageDataSO.curStage);
             LoadSceneWithFade(_stageDataSO.curStage);
         }
     }
