@@ -14,6 +14,8 @@ public class PlayerStats : MonoBehaviour , IDamageable
     
     [Header("Current Stats")]
     [SerializeField] protected int hp;
+
+    [SerializeField] public float attackAfterDelay = 0.2f;
     public virtual int Hp
     {
         get => hp;
@@ -80,7 +82,7 @@ public class PlayerStats : MonoBehaviour , IDamageable
         GameManager.Instance.SetActiveGameOverUI(true);
         if (this.TryGetComponent<RunNActionPlayer>(out RunNActionPlayer player))
         {
-            player.isGameOver = true;
+            player.canMove = false;
         }
         
     }

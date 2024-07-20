@@ -10,7 +10,6 @@ public class Obstacle : Abstract_Enemy
     [SerializeField] private List<Sprite> _sprites; 
     private void Awake()
     {
-        this.GetComponent<Collider2D>().isTrigger = true;
         if (_sprites.Count > 0)
         {
             GetComponent<SpriteRenderer>().sprite = _sprites[Random.Range(0, _sprites.Count)];
