@@ -8,7 +8,7 @@ public class RunNActionCollisionDetector : BaseCollisionDetector
     
     public virtual void CheckDamageableObject()
     {
-        CurInteractableObject = null;
+        CurDamageableObject = null;
         foreach (var col in _enemyCheck.DetectedColliders)
         {
             if (col.TryGetComponent(out IDamageable damageableObject))

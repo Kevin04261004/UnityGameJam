@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 145959287}
   - component: {fileID: 145959288}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: stand_02_stand_back_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 264998591}
   - component: {fileID: 264998592}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: stand_03_stand_front_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 401999691}
   - component: {fileID: 401999692}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: stand_00_bottom_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9110,6 +9110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetStage: 2
+  <CanGoNextStage>k__BackingField: 0
 --- !u!61 &1658152394
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9438,7 +9439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1944921967}
   - component: {fileID: 1944921968}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: stand_01_redring_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9759,7 +9760,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2077488536}
   - component: {fileID: 2077488537}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: knife_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

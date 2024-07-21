@@ -106,8 +106,12 @@ public class RoofGenerator : MonoBehaviour
     {
         foreach (var obj in _fallingObjects)
         {
-            obj.IsFall = true; 
-            obj.gameObject.SetActive(true);
+            if (obj is not null)
+            {
+                obj.IsFall = true;
+                obj.gameObject.SetActive(true);
+            }
+
             yield return fallingDelay;    
         }
         

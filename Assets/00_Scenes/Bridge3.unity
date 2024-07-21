@@ -9122,6 +9122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetStage: 3
+  <CanGoNextStage>k__BackingField: 0
 --- !u!61 &1658152394
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9649,7 +9650,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 111
+  m_SortingOrder: 10
   m_Sprite: {fileID: 2599969905456701152, guid: ad60d2e1bb911b24baaea71a51ac3dc0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
