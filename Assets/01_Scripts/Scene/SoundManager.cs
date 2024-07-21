@@ -32,8 +32,8 @@ public class SoundManager : MonoBehaviour
         {
             AddAudioSource();
         }
-
         _soundDataSO.OnLoadDataSuccess += SetVolumes;
+
         MusicMasterSlider.onValueChanged.AddListener(SetMasterVolume);
         MusicBGMSlider.onValueChanged.AddListener(SetBGMVolume);
         MusicSFXSlider.onValueChanged.AddListener(SetSFXVolume);
@@ -79,8 +79,22 @@ public class SoundManager : MonoBehaviour
         float BGMVolume = _soundDataSO.GetVolume("BGM");
         float SFXVolume = _soundDataSO.GetVolume("SFX");
 
+        if (MusicMasterSlider.value == masterVolume)
+        {
+            MusicMasterSlider.value = -1;
+        }
         MusicMasterSlider.value = masterVolume;
+        
+        if (MusicBGMSlider.value == BGMVolume)
+        {
+            MusicBGMSlider.value = -1;
+        }
         MusicBGMSlider.value = BGMVolume;
+        
+        if (MusicSFXSlider.value == SFXVolume)
+        {
+            MusicSFXSlider.value = -1;
+        }
         MusicSFXSlider.value = SFXVolume;
     }
     

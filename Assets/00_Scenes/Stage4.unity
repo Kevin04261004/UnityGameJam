@@ -1576,6 +1576,18 @@ PrefabInstance:
       propertyPath: m_Points.Array.data[6].y
       value: 0.42248645
       objectReference: {fileID: 0}
+    - target: {fileID: 6025606102753205256, guid: d05f045da036ede4e8e0b60350b8cbf9, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025606102753205256, guid: d05f045da036ede4e8e0b60350b8cbf9, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025606102753205256, guid: d05f045da036ede4e8e0b60350b8cbf9, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7877929551827578769, guid: d05f045da036ede4e8e0b60350b8cbf9, type: 3}
       propertyPath: m_Name
       value: PushableBox (1)
@@ -20152,6 +20164,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3362690962455646762, guid: d05f045da036ede4e8e0b60350b8cbf9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025606102753205256, guid: d05f045da036ede4e8e0b60350b8cbf9, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025606102753205256, guid: d05f045da036ede4e8e0b60350b8cbf9, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025606102753205256, guid: d05f045da036ede4e8e0b60350b8cbf9, type: 3}
+      propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7877929551827578769, guid: d05f045da036ede4e8e0b60350b8cbf9, type: 3}
