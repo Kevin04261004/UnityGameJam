@@ -31,7 +31,7 @@ public class LampPlayer : BasePlayer
         {
             speed = 0;
         }
-        if (_detector.IsWall)
+        if (!_detector.Grounded && (_detector.IsWall))
         {
             speed = 0;
         }
