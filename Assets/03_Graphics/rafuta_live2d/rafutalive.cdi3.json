@@ -1,0 +1,97 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "",
+			"Name": "ParamAngleX"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "",
+			"Name": "ParamAngleY"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "",
+			"Name": "ParamAngleZ"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "",
+			"Name": "ParamEyeLOpen"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "",
+			"Name": "ParamEyeROpen"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "",
+			"Name": "ParamEyeBallX"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "",
+			"Name": "ParamEyeBallY"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "",
+			"Name": "ParamBreath"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "앞머리물리좌우"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "앞머리물리상하"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "뒷머리물리1점"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "뒷머리물리2점"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "뒷머리물리3점"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part",
+			"Name": "rafuta"
+		},
+		{
+			"Id": "Part2",
+			"Name": "leaf"
+		},
+		{
+			"Id": "Part3",
+			"Name": "head"
+		},
+		{
+			"Id": "Part4",
+			"Name": "eye"
+		},
+		{
+			"Id": "Part5",
+			"Name": "eyeR"
+		},
+		{
+			"Id": "Part6",
+			"Name": "eyeL"
+		}
+	]
+}
