@@ -6,7 +6,7 @@ public class FormChangere : MonoBehaviour,IInteractableObject
     [SerializeField] private PlayerHandler.EMovementType targetType;
     [SerializeField] private GameObject targetObject;
     [SerializeField] private bool condition;
-    
+    [SerializeField] private Stage_End stageEnd;
     public void Interact()
     {
         PlayerHandler playerHandler = FindAnyObjectByType<PlayerHandler>();
@@ -21,6 +21,7 @@ public class FormChangere : MonoBehaviour,IInteractableObject
         playerHandler.CurType = targetType;
         GetComponent<Collider2D>().enabled = false;
 
+        stageEnd.CanGoNextStage = true;
     }
     
 }

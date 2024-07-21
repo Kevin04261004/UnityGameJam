@@ -39,7 +39,7 @@ public abstract class Abstract_Enemy : MonoBehaviour, IDamageable
     [FormerlySerializedAs("target_layer")] [SerializeField] protected string targetTag = "Player";
     
     
-    abstract protected void Die();
+    protected abstract void Die();
 
     public virtual void TakeDamage(int _damage)
     {

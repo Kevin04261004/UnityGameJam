@@ -130,6 +130,7 @@ public class SceneHandler : MonoBehaviour
         loadScenes.Add(EndScene, LoadSceneMode.Additive);
         loadScenes.Add(Bridge1, LoadSceneMode.Additive);
         loadScenes.Add(Bridge2, LoadSceneMode.Additive);
+        loadScenes.Add(Bridge3, LoadSceneMode.Additive);
         
     }
 

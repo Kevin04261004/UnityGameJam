@@ -29993,11 +29993,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3279446905668470774, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3496221733542906328, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059838547278237028, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059838547278237028, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
+      propertyPath: m_Offset.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5134208841348520416, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30041,7 +30049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7153381717936869332, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       propertyPath: curType
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7900669539384157208, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       propertyPath: m_Material
@@ -30221,7 +30229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_moveObject: {fileID: 1365478038306601327}
   m_shaderPropertyName: _MoveToMaterialUV
-  m_shaderPropertyID: 1606
+  m_shaderPropertyID: 1725
   m_materialData:
   - m_trailRenderer: {fileID: 0}
     m_uvTiling: {x: 1, y: 1}

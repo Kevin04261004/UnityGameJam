@@ -38,6 +38,10 @@ public class Obstacle : Abstract_Enemy
 
     protected override void Die()
     {
+        if (gameObject == null || !gameObject.activeSelf)
+        {
+            return;
+        }
         this.gameObject.SetActive(false);
     }
 

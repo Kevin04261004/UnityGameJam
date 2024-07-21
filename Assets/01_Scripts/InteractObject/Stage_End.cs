@@ -17,14 +17,14 @@ public class Stage_End : MonoBehaviour , IInteractableObject
     }
 
     [SerializeField] private stageEnum targetStage;
-    
+    [field: SerializeField] public bool CanGoNextStage { get; set; } = false;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.gameObject.CompareTag("Player"))
+        if (!other.gameObject.CompareTag("Player") || !CanGoNextStage)
         {
             return;
         }
-        
+
         if (other.GetComponent<PlayerStats>() != null)
         {
             Interact();

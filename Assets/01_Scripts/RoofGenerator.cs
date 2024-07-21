@@ -23,7 +23,8 @@ public class RoofGenerator : MonoBehaviour
 
     [SerializeField]private bool fallInAwake = false;
     [SerializeField] private float intervalValue = 1;
-    
+
+    private WaitForSeconds fallDelayWFS;
     private void Awake()
     {
         if (fallingObjectPrefab == null)
@@ -45,9 +46,10 @@ public class RoofGenerator : MonoBehaviour
         points.Sort((transform1, transform2) => { return transform1.position.x.CompareTo(transform2.position.x);});
         
         GenerateRoof();
-       
-        
-        
+
+
+        fallDelayWFS = new WaitForSeconds(fallDelay);
+
     }
 
     private void GenerateRoof()
@@ -97,7 +99,7 @@ public class RoofGenerator : MonoBehaviour
 
     public void Fallobjects()
     {
-        StartCoroutine(IFallObjects(new WaitForSeconds(fallDelay)));
+        StartCoroutine(IFallObjects(fallDelayWFS));
     }
     
     private IEnumerator IFallObjects(WaitForSeconds fallingDelay)
