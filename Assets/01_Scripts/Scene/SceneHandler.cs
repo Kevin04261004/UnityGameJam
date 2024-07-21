@@ -19,6 +19,9 @@ public class SceneHandler : MonoBehaviour
     public static readonly string Stage3 = "Stage3";
     public static readonly string Stage4 = "Stage4";
     public static readonly string EndScene = "EndScene";
+    public static readonly string Bridge1 = "Bridge1";
+    public static readonly string Bridge2 = "Bridge2";
+    public static readonly string Bridge3 = "Bridge3";
     public Dictionary<string, LoadSceneMode> loadScenes = new Dictionary<string, LoadSceneMode>();
     // public delegate void SceneLoadedEvent();
     // public Dictionary<string, SceneLoadedEvent> sceneLoadedEvents = new Dictionary<string, SceneLoadedEvent>();
@@ -120,6 +123,9 @@ public class SceneHandler : MonoBehaviour
         loadScenes.Add(Stage3, LoadSceneMode.Additive);
         loadScenes.Add(Stage4, LoadSceneMode.Additive);
         loadScenes.Add(EndScene, LoadSceneMode.Additive);
+        loadScenes.Add(Bridge1, LoadSceneMode.Additive);
+        loadScenes.Add(Bridge2, LoadSceneMode.Additive);
+        
     }
 
     public void LoadSceneWithFade(string sceneName)
@@ -247,6 +253,58 @@ public class SceneHandler : MonoBehaviour
                 yield return SceneManager.UnloadSceneAsync(EndScene);
             }
         }
+        
+        if (sceneName == Bridge1)
+        {
+            _stageDataSO.curStage = Bridge1;
+            GameManager.Instance.GameType = GameManager.EGameType.Bridge1;
+            if (!IsSceneLoaded(CharacterScene))
+            {
+                SceneManager.LoadSceneAsync(CharacterScene, mode);
+            }
+        }
+        else
+        {
+            if (IsSceneLoaded(Bridge1))
+            {
+                yield return SceneManager.UnloadSceneAsync(Bridge1);
+            }
+        }
+        
+        if (sceneName == Bridge2)
+        {
+            _stageDataSO.curStage = Bridge2;
+            GameManager.Instance.GameType = GameManager.EGameType.Bridge2;
+            if (!IsSceneLoaded(CharacterScene))
+            {
+                SceneManager.LoadSceneAsync(CharacterScene, mode);
+            }
+        }
+        else
+        {
+            if (IsSceneLoaded(Bridge2))
+            {
+                yield return SceneManager.UnloadSceneAsync(Bridge2);
+            }
+        }
+        
+        if (sceneName == Bridge3)
+        {
+            _stageDataSO.curStage = Bridge3;
+            GameManager.Instance.GameType = GameManager.EGameType.Bridge3;
+            if (!IsSceneLoaded(CharacterScene))
+            {
+                SceneManager.LoadSceneAsync(CharacterScene, mode);
+            }
+        }
+        else
+        {
+            if (IsSceneLoaded(Bridge3))
+            {
+                yield return SceneManager.UnloadSceneAsync(Bridge3);
+            }
+        }
+        
 
         if (IsSceneLoaded(sceneName))
         {
@@ -289,7 +347,14 @@ public class SceneHandler : MonoBehaviour
             else if (scene.name == Stage4)
             {
                 playerHandler.CurType = PlayerHandler.EMovementType.Lamp;
+            }else if (scene.name == Bridge1 || scene.name == Bridge3)
+            {
+                playerHandler.CurType = PlayerHandler.EMovementType.Platformer;
+            }else if (scene.name == Bridge2)
+            {
+                playerHandler.CurType = PlayerHandler.EMovementType.Run;
             }
+            
             /* global Volume */
             if (GameManager.Instance.GlobalVolume.profile.TryGet(out ColorLookup lookUp))
             {

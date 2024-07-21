@@ -38,6 +38,12 @@ public class RunNActionPlayer : BasePlayer
             _animator.SetTrigger(EAnimationKeys.Jump.ToString());
         }
         
+        // interact
+        if (_inputHandler.InteractKeyDown && _detector.CurInteractableObject != null)
+        {
+            _detector.CurInteractableObject.Interact();
+        }
+        
         /* Attack */
         if (_inputHandler.leftMouseButtonDown && playerStats.canAttack && _detector.Grounded)
         {

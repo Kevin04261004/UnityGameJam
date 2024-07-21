@@ -10,6 +10,10 @@ public class Stage_End : MonoBehaviour , IInteractableObject
         Stage2,
         Stage3,
         Stage4,
+        Bridge1,
+        Bridge2,
+        Bridge3,
+        
     }
 
     [SerializeField] private stageEnum targetStage;
@@ -43,6 +47,15 @@ public class Stage_End : MonoBehaviour , IInteractableObject
                 break;
             case stageEnum.Stage4:
                 SceneHandler.Instance.LoadSceneWithFade(SceneHandler.Stage4);
+                break;
+            case stageEnum.Bridge1:
+                SceneHandler.Instance.LoadSceneWithFade(SceneHandler.Bridge1);
+                break;
+            case stageEnum.Bridge2:
+                SceneHandler.Instance.LoadSceneWithFade(SceneHandler.Bridge2);
+                break;
+            case stageEnum.Bridge3:
+                SceneHandler.Instance.LoadSceneWithFade(SceneHandler.Bridge3);
                 break;
             default:
                 Debug.LogWarning("Scene Missing");

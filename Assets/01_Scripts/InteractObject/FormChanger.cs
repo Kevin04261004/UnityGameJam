@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class FormChangere : MonoBehaviour,IInteractableObject
 {
     [SerializeField] private PlayerHandler.EMovementType targetType;
+    [SerializeField] private GameObject targetObject;
+    [SerializeField] private bool condition;
     
     public void Interact()
     {
@@ -14,9 +16,10 @@ public class FormChangere : MonoBehaviour,IInteractableObject
             Debug.LogWarning("Player doesn't exist ");
             return;
         }
-
+        
+        targetObject.SetActive(condition);
         playerHandler.CurType = targetType;
-
+        GetComponent<Collider2D>().enabled = false;
 
     }
     

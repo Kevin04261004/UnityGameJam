@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
         Stage2,
         Stage3,
         Stage4,
+        Bridge1,
+        Bridge2,
+        Bridge3,
+        
     }
     public EGameType GameType { get; set; } = EGameType.Start;
     

@@ -64,7 +64,7 @@ public class Stage3LevelHandler : MonoBehaviour
 
     public void StageClear()
     {
-        SceneHandler.Instance.LoadSceneWithFade(SceneHandler.Stage4);
+        SceneHandler.Instance.LoadSceneWithFade(SceneHandler.Bridge3);
     }
 
     public void SetBGM(AudioClip bgm)
