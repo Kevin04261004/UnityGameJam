@@ -19,6 +19,7 @@ public class SceneHandler : MonoBehaviour
     public static readonly string Stage3 = "Stage3";
     public static readonly string Stage4 = "Stage4";
     public static readonly string EndScene = "EndScene";
+    public AudioListener audioListener;
     public static readonly string Bridge1 = "Bridge1";
     public static readonly string Bridge2 = "Bridge2";
     public static readonly string Bridge3 = "Bridge3";
@@ -109,6 +110,10 @@ public class SceneHandler : MonoBehaviour
         OnSceneLoaded(new Scene(), LoadSceneMode.Additive);
         if (SceneManager.sceneCount != 1)
         {
+            if (IsSceneLoaded(CharacterScene))
+            {
+                audioListener.enabled = false;
+            }
             return;
         }
         LoadSceneWithFade(TitleScene);
@@ -319,6 +324,8 @@ public class SceneHandler : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        audioListener.enabled = (!IsSceneLoaded(CharacterScene));
+
         if (TryGetObjectFromScene(CharacterScene, out PlayerHandler playerHandler))
         {
             /* spawnPoint */

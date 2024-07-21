@@ -8,6 +8,7 @@ public class Chest : MonoBehaviour, IInteractableObject
 {
     public Animator animator;
     public UnityEvent OnOpen;
+    public AudioClip chestOpenClip;
     public bool IsOpened
     {
         get { return isOpened; }
@@ -36,6 +37,7 @@ public class Chest : MonoBehaviour, IInteractableObject
         {
             Open();
             StartCoroutine(EndGameRoutine());
+            SoundManager.Instance.PlayOneShot(chestOpenClip);
         }
     }
 

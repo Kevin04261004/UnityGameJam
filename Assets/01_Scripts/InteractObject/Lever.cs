@@ -8,6 +8,7 @@ public class Lever : MonoBehaviour, IInteractableObject
     public Transform lever;
     public UnityEvent OnTriggerOn;
     public UnityEvent OnTriggerOff;
+    public AudioClip leverTriggerSound;
     public void Interact()
     {
         if (IsOn) // true -> false
@@ -20,5 +21,10 @@ public class Lever : MonoBehaviour, IInteractableObject
             lever.eulerAngles = new Vector3(0, 0, -45f);
             OnTriggerOn.Invoke();
         }
+    }
+
+    public void PlayLeverSoundOneShot()
+    {
+        SoundManager.Instance.PlayOneShot(leverTriggerSound);
     }
 }

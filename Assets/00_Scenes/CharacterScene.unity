@@ -10022,11 +10022,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_moveObject: {fileID: 692347755}
   m_shaderPropertyName: _MoveToMaterialUV
-  m_shaderPropertyID: 1606
+  m_shaderPropertyID: 1587
   m_materialData:
   - m_trailRenderer: {fileID: 692347756}
     m_uvTiling: {x: 1, y: 1}
     m_move: 0
+--- !u!1 &698463732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 844772400703797824, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
+  m_PrefabInstance: {fileID: 1365478038306601324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!81 &698463751
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698463732}
+  m_Enabled: 1
+--- !u!1 &986381176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3279446905668470774, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
+  m_PrefabInstance: {fileID: 1365478038306601324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &986381180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986381176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25b74635230d0fa429d63632e632e7b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _landSound: {fileID: 8300000, guid: 6545bdc02e306e24bb68314a2cce7f62, type: 3}
+  _walkSound:
+  - {fileID: 8300000, guid: 6eec15f464fb38a428907d7fb6829595, type: 3}
+  - {fileID: 8300000, guid: d7f59c28b48a5c246903485605619c6a, type: 3}
+  - {fileID: 8300000, guid: 0b681cdf4aa5f0c43bf973b1aa3d9fe3, type: 3}
+  - {fileID: 8300000, guid: 129b4768aa1e6464687d896c154a0c8e, type: 3}
 --- !u!1 &1159595359
 GameObject:
   m_ObjectHideFlags: 0
@@ -29947,6 +29983,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2587241768739032461, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
+      propertyPath: _layerMask.m_Bits
+      value: 392
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279446905668470774, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3496221733542906328, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -29993,7 +30037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7153381717936869332, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       propertyPath: curType
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7900669539384157208, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       propertyPath: m_Material
@@ -30011,6 +30055,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 844772400703797824, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 698463751}
+    - targetCorrespondingSourceObject: {fileID: 3279446905668470774, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 986381180}
     - targetCorrespondingSourceObject: {fileID: 3496221733542906328, guid: 78340b4e54e24464f8f2862438ee6bbb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1365478038306601326}

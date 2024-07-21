@@ -47,7 +47,7 @@ MonoBehaviour:
   m_ComponentVersion: 2
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0
+  m_FalloffIntensity: 0.15
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
@@ -263,6 +263,7 @@ MonoBehaviour:
   <_animator>k__BackingField: {fileID: 1206777560584634088}
   _runMovementDataSO: {fileID: 11400000, guid: 1ab0bad6f40913b449295f0b5d67429a, type: 2}
   playerStats: {fileID: 2148736553884455861}
+  <canMove>k__BackingField: 0
 --- !u!114 &4900688821763449907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,8 +502,10 @@ MonoBehaviour:
   initHp: 5
   attackCooldown: 0.4
   hp: 0
+  attackAfterDelay: 0.2
   damage: 2
   <canAttack>k__BackingField: 0
+  _trailRenderer: {fileID: 0}
 --- !u!1 &2102164343686526022
 GameObject:
   m_ObjectHideFlags: 0
