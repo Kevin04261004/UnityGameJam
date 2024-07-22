@@ -32,6 +32,7 @@ public class CharacterLookAt : MonoBehaviour
     public float maxDistance = 1;
     public float blinkTime = 0;
     public float breathTime = 0;
+    private bool isBreathing = true;
     private void Awake()
     {
         cam = Camera.main;
@@ -68,24 +69,35 @@ public class CharacterLookAt : MonoBehaviour
             Parameters[(int)EParamType.blinkLeft].Value = isBlinked ? 1 : 0;
             Parameters[(int)EParamType.blinkRight].Value = isBlinked ? 1 : 0;
 
-            blinkTime = isBlinked ?  Random.Range(1,1.5f) : Random.Range(0.2f, 0.3f);
+            blinkTime = isBlinked ? Random.Range(2f, 2.5f) : Random.Range(0.2f,0.3f);
             isBlinked = !isBlinked;
         }
         
-        breathTime -= Time.deltaTime;
-        if (breathTime <= 0)
-        {
-            if (Parameters[(int)EParamType.breath].Value == 1)
+        //breathTime -= Time.deltaTime;
+        //if (breathTime <= 1)
+        //{
+            if (isBreathing)
             {
-                Parameters[(int)EParamType.breath].Value = -1;
+                Parameters[(int)EParamType.breath].Value -= Time.deltaTime / 1.5f;
             }
             else
             {
-                Parameters[(int)EParamType.breath].Value = 1;
+                Parameters[(int)EParamType.breath].Value += Time.deltaTime / 1.5f ;
             }
-        
-            breathTime = 0.5f;
-        }
+
+            if (Parameters[(int)EParamType.breath].Value >= 1)
+            {
+                Parameters[(int)EParamType.breath].Value = 1;
+                isBreathing = true;
+            }
+            else if (Parameters[(int)EParamType.breath].Value <= 0)
+            {
+                Parameters[(int)EParamType.breath].Value = 0;
+                isBreathing = false;
+            }
+
+            //breathTime = 2.5f;
+        //}
     }
 
 
