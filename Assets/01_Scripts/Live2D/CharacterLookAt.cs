@@ -68,7 +68,7 @@ public class CharacterLookAt : MonoBehaviour
             Parameters[(int)EParamType.blinkLeft].Value = isBlinked ? 1 : 0;
             Parameters[(int)EParamType.blinkRight].Value = isBlinked ? 1 : 0;
 
-            blinkTime = isBlinked ? Random.Range(0.2f, 0.3f) : Random.Range(1,1.5f);
+            blinkTime = isBlinked ?  Random.Range(1,1.5f) : Random.Range(0.2f, 0.3f);
             isBlinked = !isBlinked;
         }
         
