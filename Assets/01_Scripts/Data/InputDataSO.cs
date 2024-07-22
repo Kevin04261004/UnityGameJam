@@ -70,12 +70,12 @@ public class InputDataSO : PersistenceDataSO
             if (FileHandler.TryWrite(INPUT_DATA_JSON_RELATIVE_PATH, jsonData.SerializeToBytes()))
             {
                 Debugger.Log("Save Input Data", "Input Data를 Json에 적는데 성공했습니다.", EColor.green);
-                OnSaveDataSuccess?.Invoke();
             }
             else
             {
                 Debugger.Log("Save Input Data", "Input Data를 Json에 적는데 실패했습니다.", EColor.red);
             }
+            OnSaveDataSuccess?.Invoke();
         }
         [ContextMenu("LoadInputDataFromJson")]
         public override void LoadData()
@@ -98,12 +98,12 @@ public class InputDataSO : PersistenceDataSO
                     return;
                 }   
                 Debugger.Log("Load Input Data", "Input Data를 Json으로 부터 읽어들이는데 성공했습니다.", EColor.green);
-                OnLoadDataSuccess?.Invoke();
             }
             else
             {
                 Debugger.Log("Load Input Data", "InputData가 존재하지 않습니다. 기본 세팅으로 진행합니다.", EColor.purple);
             }
+            OnLoadDataSuccess?.Invoke();
         }
         #endregion
 }

@@ -17,12 +17,12 @@ public class StageDataSO : PersistenceDataSO
         if (FileHandler.TryWrite(STAGE_DATA_JSON_RELATIVE_PATH, str.SerializeToBytes()))
         {
             Debugger.Log("Save Stage Data", "Stage Data를 바이너리로 적는데 성공했습니다.", EColor.green);
-            OnSaveDataSuccess?.Invoke();
         }
         else
         {
             Debugger.Log("Save Stage Data", "Stage Data를 바이너리로 적는데 실패했습니다.", EColor.red);
         }
+        OnSaveDataSuccess?.Invoke();
     }
     [ContextMenu("LoadStageDataFromJson")]
     public override void LoadData()
@@ -41,11 +41,11 @@ public class StageDataSO : PersistenceDataSO
                 return;
             }   
             Debugger.Log("Load Stage Data", "Stage Data를 바이너리 파일로 부터 읽어들이는데 성공했습니다.", EColor.green);
-            OnLoadDataSuccess?.Invoke();
         }
         else
         {
             Debugger.Log("Load Stage Data", "StageData가 존재하지 않습니다. 기본 세팅으로 진행합니다.", EColor.purple);
         }   
+        OnLoadDataSuccess?.Invoke();
     }
 }

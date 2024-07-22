@@ -15,6 +15,7 @@ namespace DYLib
                 string fullPath = GetPath(relativePath);
                 
                 string directoryPath = Path.GetDirectoryName(fullPath);
+                Debugger.Log($"Dir: {directoryPath}");
                 Debugger.Assert(directoryPath != null, "Directory Path가 NULL입니다.");
                 if (!Directory.Exists(directoryPath))
                 {
